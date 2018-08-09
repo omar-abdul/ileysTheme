@@ -1,7 +1,9 @@
 <?php
 /*
   ##########
+
    Admin page
+   
   #########
 */
 
@@ -24,21 +26,63 @@ add_action('admin_menu','ileys_admin_page');
 
 
 function ileys_custom_settings(){
-    register_setting('ileys-settings-group','first_name');
+    register_setting('ileys-settings-group','facebook_handler');
+    register_setting('ileys-settings-group','twitter_handler');
+    register_setting('ileys-settings-group','linkedin_handler');
 
-    add_settings_section('ileys-sidebar-options','Sidebar Options','ileys_sidebar_options','ileys_theme');
-    add_settings_field('ileys-sidebar-field','First name','ileys_sidebar_name','ileys_theme','ileys-sidebar-options');
+    add_settings_section(
+    'ileys-social-options',
+    'Social Links',
+    'ileys_social_cb',
+    'ileys_theme'
+);
+    
+    
+    add_settings_field(
+    'ileys-facebook-field', #unique Id
+    'Facebook Link',        #Title to show
+    'ileys_social_handler', #callback function
+    'ileys_theme',          #page
+    'ileys-social-options', #section id
+    array(
+        'ileys-facebook-field',#arguments
+        'facebook.com'
+    )        
+);
+    add_settings_field(
+        'ileys-twitter-field', #unique Id
+        'Twitter Link',        #Title to show
+        'ileys_social_handler', #callback function
+        'ileys_theme',          #page
+        'ileys-social-options', #section id
+        array(
+            'ileys-twitter-field', #arguments
+            'twitter.com'
+        )        
+    );
+
+    add_settings_field(
+        'ileys-linkedin-field', #unique Id
+        'Linkedin Link',        #Title to show
+        'ileys_social_handler', #callback function
+        'ileys_theme',          #page
+        'ileys-social-options', #section id
+        array(
+            'ileys-linkedin-field', #arguments
+            'linkedin.com'
+        )        
+    );    
 
 
 }
-function ileys_sidebar_name(){
-    $firstName = esc_attr(get_option('first_name'));
-    echo '<input type=text name="first_name" value="'.$firstName.'" placeholder="">';
+function ileys_social_handler($args){
+    $social = esc_attr(get_option($args[0]));
+    echo '<input type=text id= "'.$social.'"  name=  "'.$social.'" value="'.$social.'" placeholder=" ' . $args[1] .'">';
 }
 
 
-function ileys_sidebar_options() {
-    echo 'Customize sidebar';
+function ileys_social_cb() {
+    echo 'Customize Social Links';
 }
 
 
