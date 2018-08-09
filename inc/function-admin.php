@@ -3,7 +3,7 @@
   ##########
 
    Admin page
-   
+
   #########
 */
 
@@ -26,9 +26,6 @@ add_action('admin_menu','ileys_admin_page');
 
 
 function ileys_custom_settings(){
-    register_setting('ileys-settings-group','facebook_handler');
-    register_setting('ileys-settings-group','twitter_handler');
-    register_setting('ileys-settings-group','linkedin_handler');
 
     add_settings_section(
     'ileys-social-options',
@@ -39,45 +36,51 @@ function ileys_custom_settings(){
     
     
     add_settings_field(
-    'ileys-facebook-field', #unique Id
+    'option_fb', #unique Id
     'Facebook Link',        #Title to show
     'ileys_social_handler', #callback function
     'ileys_theme',          #page
     'ileys-social-options', #section id
     array(
-        'ileys-facebook-field',#arguments
+        'option_fb',#arguments
         'facebook.com'
     )        
 );
     add_settings_field(
-        'ileys-twitter-field', #unique Id
+        'option_tw', #unique Id
         'Twitter Link',        #Title to show
         'ileys_social_handler', #callback function
         'ileys_theme',          #page
         'ileys-social-options', #section id
         array(
-            'ileys-twitter-field', #arguments
+            'option_tw', #arguments
             'twitter.com'
         )        
     );
 
     add_settings_field(
-        'ileys-linkedin-field', #unique Id
+        'option_lin', #unique Id
         'Linkedin Link',        #Title to show
         'ileys_social_handler', #callback function
         'ileys_theme',          #page
         'ileys-social-options', #section id
         array(
-            'ileys-linkedin-field', #arguments
+            'option_lin', #arguments
             'linkedin.com'
         )        
     );    
+    register_setting('ileys-settings-group','option_fb');
+    register_setting('ileys-settings-group','option_tw');
+    register_setting('ileys-settings-group','option_lin');
 
 
 }
 function ileys_social_handler($args){
+
     $social = esc_attr(get_option($args[0]));
-    echo '<input type=text id= "'.$social.'"  name=  "'.$social.'" value="'.$social.'" placeholder=" ' . $args[1] .'">';
+
+    echo '<input type=text id= "'.$args[0].'"  name=  "'.$args[0].'" value="'.$social.'" placeholder=" ' . $args[1] .'">';
+ 
 }
 
 
