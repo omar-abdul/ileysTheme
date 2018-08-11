@@ -1,0 +1,28 @@
+/*
+
+Admin style
+@package ileys
+*/
+
+h1{
+    font-size: 10px;
+}
+em {
+    margin-left:-20px;
+    margin-right:6px;
+}
+
+.ileys-slider-preview{
+    background-color: #d8fbff;
+    border-radius: 10px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+.img-thumbnail{
+    width:150px;
+}
+.image-container img{
+    width:150px;
+    border: 2px solid rebeccapurple;
+}

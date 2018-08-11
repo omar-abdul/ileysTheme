@@ -2,6 +2,8 @@
 
  require get_template_directory() . '/inc/function-admin.php';
 
+ require get_template_directory(). '/inc/enqueue.php';
+
 
 function custom_theme_setup(){
     add_theme_support( 'title-tag' );
