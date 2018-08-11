@@ -2,9 +2,9 @@
         
         
 
-        <footer>
-        
-        </footer>
-        <?php wp_footer()?>
-     </body>
-</html>
+                <footer>
+
+                </footer>
+                <?php wp_footer()?>
+        </body>
+</html>    
