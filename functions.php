@@ -15,6 +15,13 @@ function custom_theme_setup(){
     );
     add_theme_support('post-thumbnails');
 
+    $defaults = array(
+        'width'=>0,
+        'height'=>60,
+        'uploads'=>true
+    );
+
+    add_theme_support('custom-header',$defaults);
     add_theme_support( 'post-formats', array(
 		'aside',
 		'image',
