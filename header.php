@@ -4,10 +4,13 @@
 Header template  to display on front page
 @package ileys
 */
+<<<<<<< HEAD
 
 $slide1 = esc_attr(get_option('slider_image_1'));
 $slide2 = esc_attr(get_option('slider_image_2'));
 $slide3 = esc_attr(get_option('slider_image_3'));
+=======
+>>>>>>> parent of deb32bc... sections
 ?>
 
 
@@ -31,13 +34,13 @@ $slide3 = esc_attr(get_option('slider_image_3'));
 
 
 
-    <header class="p-3 px-md-4 mb-3 bg-white fixed-top border-bottom box-shadow">
+    <header class="p-3 px-md-4 mb-3 bg-white <?php $x= is_admin_bar_showing()?print 'admin-bar-fixed':print 'fixed-top'; ?> border-bottom box-shadow">
       <h5 class="float-left font-weight-normal">Ileys Enterprises</h5>
-      <nav class="site-nav">
+      <nav>
 
         <?php wp_nav_menu(array(
             'theme_location'=>'primary', 
-            'container'=>false,
+            'container_class'=>'site-nav',
             'walker'=> new Walker_Nav_Primary()
             ));?>
       </nav>
@@ -46,6 +49,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
                 </div>
         </div>
     </header>
+<<<<<<< HEAD
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -86,3 +90,5 @@ $slide3 = esc_attr(get_option('slider_image_3'));
         </a>
       </div>        
 
+=======
+>>>>>>> parent of deb32bc... sections

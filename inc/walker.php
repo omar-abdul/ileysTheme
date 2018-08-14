@@ -12,7 +12,7 @@ class Walker_Nav_Primary extends Walker_Nav_menu {
         $indent = str_repeat("\t",$depth);
         $submenu = ($depth > 0) ? ' submenu':'';
 
-        $output .= "\n$indent<ul class=\"submenu-dropdown depth_$depth\">\n";
+        $output .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\">\n";
 
     }
 
@@ -22,15 +22,15 @@ class Walker_Nav_Primary extends Walker_Nav_menu {
             $class_names = $value = '';
 
             $classes = empty($item->classes)? array() : $item->classes;
-            $classes[] = ($args->walker->has_children)? 'submenu' : '';
+            $classes[] = ($args->walker->has_children)? 'dropdown' : '';
 
             $classes[] = ($item->current  || $item->current_item_ancestor) ? 'active':'';
 
             $classes[] ='menu-item-' .$item->ID;
 
-        //    if($depth && $args->walker->has_children) {
-        //        $classes[] = 'submenu-dropdown';
-        //    } 
+           if($depth && $args->walker->has_children) {
+               $classes[] = 'dropdown-submenu';
+           } 
 
            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item ,  $args)  );
 
@@ -47,13 +47,13 @@ class Walker_Nav_Primary extends Walker_Nav_menu {
            $attributes .= !empty($item->url)? 'href="'. esc_attr($item->url).'"':'';
 
 
-           $attributes .= ($args->walker->has_children)? ' class="submenu-toggle"':' class=""';
+           $attributes .= ($args->walker->has_children)? 'class="dropdown-toggle" data-toggle="dropdown"':'';
 
 
            $item_output = $args->before;
            $item_output .= '<a '.$attributes.'>';
            $item_output .=$args->link_before . apply_filters('the_title', $item->title , $item->ID). $args->link_after;
-           $item_output .= ($depth == 0 && $args->walker->has_children) ? '<span class="caret"></span></a>':'</a>';
+           $item_output .= ($depth == 0 && $args->walker->has_children) ? '<b class="caret"></b></a>':'</a>';
 
            $item_output .= $args->after;
 

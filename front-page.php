@@ -6,13 +6,11 @@ Front page section of the website
 
 */
 ?>
+<<<<<<< HEAD
 <?php  get_header();
 $ileys_theme_sections = array( 'banners', 'about', 'product', 'trading', 'promotional', 'partners', 'staff' );    
+=======
+<?php  get_header();?>
+>>>>>>> parent of deb32bc... sections
 
-if(!is_home() && is_front_page()){
-    foreach($ileys_theme_sections as $sections){
-        get_template_part('template-parts/'.esc_attr($sections));
-    }
-}
-
-get_footer();
+<?php get_footer();?>

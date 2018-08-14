@@ -1,20 +1,5 @@
 
-/*!
- * Start Bootstrap - Full Slider (https://startbootstrap.com/template-overviews/full-slider)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-slider/blob/master/LICENSE)
- */
 
- .carousel-item {
-    height: 100vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
 
 
 .slider-container {
@@ -36,9 +21,9 @@
 }
 .admin-bar-fixed{
     position: fixed;
-    /* top: 25px;*/
+    top: 25px;
     left: 0;
-    right: 0; 
+    right: 0;
     z-index: 1030;
 }
 .site-nav{
@@ -47,17 +32,12 @@
     right:0%;
     background:#555658;
     height:0px;
-    overflow:hidden;
-
-
+    overflow: hidden
 
 }
-
 .site-nav-active{
-    min-height:500px;
-    overflow-y: auto;
+    height:auto;
 }
-
 
 .site-nav ul {
     list-style: none;
@@ -66,16 +46,14 @@
 
 
 }
-/* .site-nav .sub-menu  li {
+.site-nav .sub-menu  li {
 
     border-bottom: 1px solid rgb(100, 97, 97);
 
-} */
-/* .site-nav .sub-menu a{
+}
+.site-nav .sub-menu a{
     padding:1em 0 1em 8em ; 
-} */
-
-
+}
 .site-nav  li {
 
     border-bottom: 1px solid rgb(100, 97, 97);
@@ -98,15 +76,6 @@
     color:#555658
 }
 
-.submenu  .submenu-dropdown{
-    padding-left:2em;
-}
-
-.menu-item-has-children .submenu .submenu-dropdown{
-    padding-left:6.75em;
-}
-
-
 
 
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
@@ -120,11 +89,11 @@
     }
     .site-nav{
         height:auto;
-        overflow: visible;
         position: relative;
         background: rgba(0, 0, 0, 0);
         float: right;
     }
+<<<<<<< HEAD
 
     .submenu {
         position :relative;
@@ -182,6 +151,8 @@
         right:-100%;
     } 
 
+=======
+>>>>>>> parent of deb32bc... sections
     .site-nav li {
         display: inline-block;
         border: none;
@@ -259,15 +230,5 @@
     transform: rotate(135deg);
 }
 
-header nav:after {
-    
-      content: "";
-    
-      display: block;
-    
-      clear: both;
-    
-    }
-    
 
 
