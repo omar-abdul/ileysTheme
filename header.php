@@ -31,7 +31,11 @@ Header template  to display on front page
       <h5 class="float-left font-weight-normal">Ileys Enterprises</h5>
       <nav>
 
-        <?php wp_nav_menu(array('theme_location'=>'primary', 'container_class'=>'site-nav'));?>
+        <?php wp_nav_menu(array(
+            'theme_location'=>'primary', 
+            'container_class'=>'site-nav',
+            'walker'=> new Walker_Nav_Primary()
+            ));?>
       </nav>
       <div class="icon <?php $x= is_admin_bar_showing()?print 'top2':print 'top75'; ?>">
                 <div class="hamburger">

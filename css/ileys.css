@@ -69,9 +69,10 @@
     display:block;
     text-transform: uppercase;
     padding:2em 6em;
+    transition: ease-in all.2s;
 }
 .site-nav  a:hover, .site-nav a:focus {
-    background:rgb(218, 252, 126);
+    background:rgb(255, 253, 160);
     color:#555658
 }
 
@@ -116,10 +117,10 @@
 
 }
 .top2{
-    top:2em;
+    top:2.5em;
 }
 .top75{
-    top:.75em;
+    top:2em;
 }
 .hamburger {
     width:35px;
