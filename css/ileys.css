@@ -1,5 +1,20 @@
 
+/*!
+ * Start Bootstrap - Full Slider (https://startbootstrap.com/template-overviews/full-slider)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-slider/blob/master/LICENSE)
+ */
 
+ .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
 
 
 .slider-container {
@@ -21,9 +36,9 @@
 }
 .admin-bar-fixed{
     position: fixed;
-    top: 25px;
+    /* top: 25px;*/
     left: 0;
-    right: 0;
+    right: 0; 
     z-index: 1030;
 }
 .site-nav{
@@ -32,12 +47,17 @@
     right:0%;
     background:#555658;
     height:0px;
-    overflow: hidden
+    overflow:hidden;
+
+
 
 }
+
 .site-nav-active{
-    height:auto;
+    min-height:500px;
+    overflow-y: auto;
 }
+
 
 .site-nav ul {
     list-style: none;
@@ -46,14 +66,16 @@
 
 
 }
-.site-nav .sub-menu  li {
+/* .site-nav .sub-menu  li {
 
     border-bottom: 1px solid rgb(100, 97, 97);
 
-}
-.site-nav .sub-menu a{
+} */
+/* .site-nav .sub-menu a{
     padding:1em 0 1em 8em ; 
-}
+} */
+
+
 .site-nav  li {
 
     border-bottom: 1px solid rgb(100, 97, 97);
@@ -76,6 +98,15 @@
     color:#555658
 }
 
+.submenu  .submenu-dropdown{
+    padding-left:2em;
+}
+
+.menu-item-has-children .submenu .submenu-dropdown{
+    padding-left:6.75em;
+}
+
+
 
 
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
@@ -89,10 +120,108 @@
     }
     .site-nav{
         height:auto;
+        overflow: visible;
         position: relative;
         background: rgba(0, 0, 0, 0);
         float: right;
     }
+
+    .submenu {
+        position :relative;
+
+    }
+    .submenu .submenu-dropdown  {
+        display: block;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        min-width:100px;
+        background-color: #555658;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        padding-left:0;
+        transition: opacity .5s ease-out;
+    }
+    .caret:after{
+        content:'';
+        position: absolute;
+        top:50%;
+        right:-15px;
+        background:rgb(161, 210, 250);
+        width: 8px;
+        height: 2px;
+        transform: rotate(135deg);
+    }
+    .caret:before{
+        content:'';
+        position: absolute;
+        top:50%;
+        right:-10px;
+        background:rgb(161, 210, 250);
+        width: 8px;
+        height: 2px;
+        transform: rotate(45deg);
+    }
+
+    .submenu .submenu-dropdown li {
+        display: block;
+        width: 100%;
+
+    }
+    .submenu .submenu-dropdown a {
+        float: none;
+        color: #e5e5e5;
+        padding: .5em .80em .5em .80em;
+        text-decoration: none;
+        display: block;
+        font-size:13px;
+        margin-right:0;
+        margin-left:0;
+
+    }
+    .submenu .submenu-dropdown a:hover {
+        background:rgb(161, 210, 250);
+        color:#fff;
+    }
+
+
+     
+    .submenu:focus .submenu-dropdown {
+        top:100%;
+        right: -20px;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+
+
+    }
+    .menu-item-has-children .submenu{
+        position: relative;
+    }
+    .menu-item-has-children .submenu .submenu-dropdown{
+        display: block;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        padding-left:0;
+    } 
+   .menu-item-has-children .submenu:focus .submenu-dropdown{
+       top:60%;
+        right:-100%;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+    } 
+
+    .submenu-dropdown.submenu-active {
+        top:100%;
+        right:-10%;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+    }
+
     .site-nav li {
         display: inline-block;
         border: none;
@@ -106,6 +235,12 @@
     }
 }
 
+.carousel-caption{
+    top:50%;
+    right:75%;
+    left:0;
+    bottom: 0;
+}
 
 .icon {
     position: absolute;
@@ -170,5 +305,15 @@
     transform: rotate(135deg);
 }
 
+header nav:after {
+    
+      content: "";
+    
+      display: block;
+    
+      clear: both;
+    
+    }
+    
 
 
