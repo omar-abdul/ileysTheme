@@ -32,6 +32,7 @@ function ileys_customize_register($wp_customize){
         array(
             'default' => '',
             'transport' => 'refresh',
+            "type"=>'theme_mod',
             'sanitize_callback' => 'absint'
         )
         );
@@ -62,6 +63,7 @@ function ileys_customize_register($wp_customize){
             array(
             'default' => '',
             'transport' => 'postMessage',
+            "type"=>'theme_mod',
             'sanitize_callback' => 'absint'
             )
         );
@@ -95,7 +97,8 @@ function ileys_customize_register($wp_customize){
         array(
             'default' => '',
             'transport' => 'refresh',
-            'sanitize_callback' => 'absint'
+            "type"=>'theme_mod',
+            'sanitize_callback'=>'absint'
         )
         );
         
@@ -124,7 +127,7 @@ function ileys_customize_register($wp_customize){
         array(
             'default' => '',
             'transport' => 'refresh',
-            'sanitize_callback' => 'absint',
+            'sanitize_callback' => 'my_sanitize_image',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options'
         )
@@ -150,9 +153,9 @@ function ileys_customize_register($wp_customize){
 
      $wp_customize->add_setting( 'sample_default_text',
      array(
-        'default' => '',
+        'default' => 'asfdfoh',
         'transport' => 'refresh',
-        'sanitize_callback' => 'absint'
+        "type"=>'theme_mod'
      )
   );
    
@@ -175,3 +178,20 @@ function ileys_customize_register($wp_customize){
 }
 
 add_action('customize_register','ileys_customize_register');
+
+function my_sanitize_image( $input ){
+ 
+    /* default output */
+    $output = '';
+ 
+    /* check file type */
+    $filetype = wp_check_filetype( $input );
+    $mime_type = $filetype['type'];
+ 
+    /* only mime type "image" allowed */
+    if ( strpos( $mime_type, 'image' ) !== false ){
+        $output = $input;
+    }
+ 
+    return $output;
+}

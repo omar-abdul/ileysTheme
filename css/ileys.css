@@ -379,3 +379,8 @@ header nav:after {
       bottom:0;
   }
 
+  .about { 
+      padding-top:20px;
+      padding-bottom:20px;
+  }
+
