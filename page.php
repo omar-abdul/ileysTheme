@@ -10,13 +10,13 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  */
-if(is_front_page()){
-    get_header(); 
+if (!is_home() && is_front_page()){
+	get_header();
+} 
+else {
+	get_header('single');
 }
 
-else{
-    get_header('page');
-}
 ?>
 
 	<div id="primary" class="content-area">

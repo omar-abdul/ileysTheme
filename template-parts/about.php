@@ -1,5 +1,5 @@
 
-1`<section class="about">
+<section class="about">
 
     <div class="container"> 
 

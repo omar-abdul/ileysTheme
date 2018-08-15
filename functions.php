@@ -3,6 +3,7 @@
  require get_template_directory() . '/inc/function-admin.php';
 
  require get_template_directory(). '/inc/enqueue.php';
+
  show_admin_bar(false);
 
 function custom_theme_setup(){
@@ -52,5 +53,6 @@ function customTheme_script_enqueue(){
 add_action('wp_enqueue_scripts','customTheme_script_enqueue');
 
 require get_template_directory(). '/inc/walker.php';
+require get_template_directory(). '/inc/customizer.php';
 
 

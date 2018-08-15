@@ -63,13 +63,13 @@ $slide3 = esc_attr(get_option('slider_image_3'));
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('<?php print $slide2 ;?>')">
             <div class="carousel-caption d-none d-md-block">
-            <h3><?php print esc_attr(get_option('slider_text_1'));?></h3>
+            <h3><?php print esc_attr(get_option('slider_text_2'));?></h3>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('<?php print $slide3 ;?>')">
             <div class="carousel-caption d-none d-md-block">
-            <h3><?php print esc_attr(get_option('slider_text_1'));?></h3>
+            <h3><?php print esc_attr(get_option('slider_text_3'));?></h3>
             </div>
           </div>
         </div>
