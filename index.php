@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php 
+	if(is_home() && !is_front_page()){
+		get_header('single');
+	} 
+		else{
+		get_header();
+	}
+
+
+?>
 
 <div class="wrap">
 

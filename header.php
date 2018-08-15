@@ -4,6 +4,10 @@
 Header template  to display on front page
 @package ileys
 */
+
+$slide1 = esc_attr(get_option('slider_image_1'));
+$slide2 = esc_attr(get_option('slider_image_2'));
+$slide3 = esc_attr(get_option('slider_image_3'));
 ?>
 
 
@@ -27,13 +31,13 @@ Header template  to display on front page
 
 
 
-    <header class="p-3 px-md-4 mb-3 bg-white <?php $x= is_admin_bar_showing()?print 'admin-bar-fixed':print 'fixed-top'; ?> border-bottom box-shadow">
+    <header class="p-3 px-md-4 mb-3 bg-white fixed-top border-bottom box-shadow">
       <h5 class="float-left font-weight-normal">Ileys Enterprises</h5>
-      <nav>
+      <nav class="site-nav">
 
         <?php wp_nav_menu(array(
             'theme_location'=>'primary', 
-            'container_class'=>'site-nav',
+            'container'=>false,
             'walker'=> new Walker_Nav_Primary()
             ));?>
       </nav>
@@ -42,3 +46,33 @@ Header template  to display on front page
                 </div>
         </div>
     </header>
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('<?php print $slide1 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3><?php print esc_attr(get_option('slider_text_1'));?></h3>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('<?php print $slide2 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+            <h3><?php print esc_attr(get_option('slider_text_2'));?></h3>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('<?php print $slide3 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+            <h3><?php print esc_attr(get_option('slider_text_3'));?></h3>
+            </div>
+          </div>
+        </div>
+
+      </div>        
+
