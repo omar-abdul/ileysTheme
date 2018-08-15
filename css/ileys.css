@@ -36,7 +36,7 @@
 }
 .admin-bar-fixed{
     position: fixed;
-    /* top: 25px;*/
+
     left: 0;
     right: 0; 
     z-index: 1030;
@@ -54,8 +54,9 @@
 }
 
 .site-nav-active{
-    min-height:500px;
+    height: 440px;
     overflow-y: auto;
+
 }
 
 
@@ -93,15 +94,55 @@
     padding:2em 6em;
     transition: ease-in all.2s;
 }
+
 .site-nav  a:hover, .site-nav a:focus {
-    background:rgb(255, 253, 160);
-    color:#555658
+    background:rgb(161, 210, 250);  
+    color:#555658;
+}
+
+  .site-nav a:focus .caret::before, .site-nav a:focus .caret::after{
+      border-top-color: #555658;
+  }
+
+  .site-nav a:hover .caret::before, .site-nav a:hover .caret::after{
+    border-top-color: #555658;
+}
+
+
+.submenu{
+    position: relative;
+
 }
 
 .submenu  .submenu-dropdown{
-    padding-left:2em;
+    /* padding-left:2em; */
+    display: block;
+    position: relative;
+
+    /* max-height:0; */
+    height: 0px;
+    overflow: hidden;
+    background: #e5e5e5;
+    /* transition: max-height 0.3s ease-in-out; */
+    
+
+
 }
 
+.submenu-dropdown a {
+    color:#000;
+}
+.submenu-dropdown.submenu-dropdown-active{
+
+
+
+    /* max-height: 500px; */
+    height: auto;
+    overflow: visible;
+
+
+   
+}
 .menu-item-has-children .submenu .submenu-dropdown{
     padding-left:6.75em;
 }
@@ -130,13 +171,18 @@
         position :relative;
     }
     .submenu .submenu-dropdown  {
-        display: none;
+        display: block;
         position: absolute;
 
-        background-color: #f9f9f9;
+        height: 0;
+        overflow: hidden;
+        background-color: rgb(100, 97, 97);
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
         padding-left:0;
+        min-width: 100px;
+        right: -40%;
+        /* transition: opacity .5s ease-out; */
     }
 
     .submenu .submenu-dropdown li {
@@ -146,41 +192,63 @@
     }
     .submenu .submenu-dropdown a {
         float: none;
-        color: black;
+        color: #e5e5e5;
         padding: .5em .80em .5em .80em;
         text-decoration: none;
         display: block;
-
+        font-size: 13px;
         margin-right:0;
         margin-left:0;
+        
 
     }
     .submenu .submenu-dropdown a:hover {
-        background:rgb(255, 253, 160);
-        color:#555658
+        background:rgb(161, 210, 250);
+        color:#fff;
     }
 
 
-    .submenu:hover .submenu-dropdown, 
+
     .submenu:focus .submenu-dropdown {
         top:100%;
         right: -10px;
         display: block;
+        overflow: visible;
+        height: auto;
+
 
     }
     .menu-item-has-children .submenu{
         position: relative;
     }
     .menu-item-has-children .submenu .submenu-dropdown{
-        display:none;
+        display: block;
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
         position: absolute;
         padding-left:0;
     }
-    .menu-item-has-children .submenu:hover .submenu-dropdown,  
+ 
    .menu-item-has-children .submenu:focus .submenu-dropdown{
-        display: inline-block;
-        right:-100%;
+        top:100%;
+        right: -10px;
+        display: block;
+        overflow: visible;
+        height: auto;
+        opacity: 1;
     } 
+
+    .submenu-dropdown.submenu-dropdown-active{
+        top: 100%;
+        /* right:-50%; */
+        display: block;
+        /* overflow: visible; */
+        height: auto;
+        opacity: 1;
+        transition: none;
+    }
 
     .site-nav li {
         display: inline-block;
@@ -266,8 +334,42 @@ header nav:after {
       display: block;
     
       clear: both;
-    
-    }
-    
+}
 
+.caret {
+    position: relative;
+    cursor: pointer;
+    width: 4px;
+    
+}
+    
+.submen:before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 5px;
+ 
+    border-top: 6px solid rgb(161, 210, 250);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+
+  }
+  .caret:after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 6px;
+    border-top: 5px solid rgb(161, 210, 250);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+
+
+
+  .carousel-caption{
+      top:50%;
+      right:70%;
+      left:0;
+      bottom:0;
+  }
 
