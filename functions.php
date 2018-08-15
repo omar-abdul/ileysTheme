@@ -4,6 +4,8 @@
 
  require get_template_directory(). '/inc/enqueue.php';
 
+ show_admin_bar(false);
+
 function custom_theme_setup(){
     add_theme_support( 'title-tag' );
     register_nav_menus(array(
@@ -50,6 +52,13 @@ function customTheme_script_enqueue(){
 
 add_action('wp_enqueue_scripts','customTheme_script_enqueue');
 
+function new_read_more($more){
+    return '...';
+}
+
+add_filter('excerpt_more','new_read_more');
+
 require get_template_directory(). '/inc/walker.php';
+require get_template_directory(). '/inc/customizer.php';
 
 

@@ -22,3 +22,9 @@ function ileys_admin_enqueue_scripts($hook){
 }
 
 add_action('admin_enqueue_scripts','ileys_admin_enqueue_scripts');
+
+
+function tuts_customize_control_js() {
+    wp_enqueue_script( 'tuts_customizer_control', get_template_directory_uri() . '/js/customizer-controls.js', array( 'customize-controls', 'jquery' ), null, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'tuts_customize_control_js' );
