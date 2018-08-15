@@ -4,6 +4,13 @@
 Header template  to display on front page
 @package ileys
 */
+<<<<<<< HEAD
+
+$slide1 = esc_attr(get_option('slider_image_1'));
+$slide2 = esc_attr(get_option('slider_image_2'));
+$slide3 = esc_attr(get_option('slider_image_3'));
+=======
+>>>>>>> parent of deb32bc... sections
 ?>
 
 
@@ -31,10 +38,57 @@ Header template  to display on front page
       <h5 class="float-left font-weight-normal">Ileys Enterprises</h5>
       <nav>
 
-        <?php wp_nav_menu(array('theme_location'=>'primary', 'container_class'=>'site-nav'));?>
+        <?php wp_nav_menu(array(
+            'theme_location'=>'primary', 
+            'container_class'=>'site-nav',
+            'walker'=> new Walker_Nav_Primary()
+            ));?>
       </nav>
       <div class="icon <?php $x= is_admin_bar_showing()?print 'top2':print 'top75'; ?>">
                 <div class="hamburger">
                 </div>
         </div>
     </header>
+<<<<<<< HEAD
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('<?php print $slide1 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>First Slide</h3>
+              <p>This is a description for the first slide.</p>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('<?php print $slide2 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('<?php print $slide3 ;?>')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>        
+
+=======
+>>>>>>> parent of deb32bc... sections
