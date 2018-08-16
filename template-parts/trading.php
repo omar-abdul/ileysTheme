@@ -22,7 +22,7 @@
                 ?>
                 <?php endif; ?>
                 </p>
-            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-danger"><?php esc_html_e('Read More','btn_text_domain') ?></a>
+            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-trade"><?php esc_html_e('Read More','btn_text_domain') ?></a>
             </div><!--excerpt -->
 
 
