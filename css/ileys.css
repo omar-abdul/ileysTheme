@@ -454,7 +454,6 @@ header nav:after {
 .trading:before {
     content: '';
     position: absolute;
-    z-index:2;
     left: 0;
     top: -35px;
     width: 100%;
@@ -467,4 +466,12 @@ header nav:after {
     transform: skewY(-2deg);
     -webkit-backface-visibility: hidden;
 
+  }
+
+  .trade-img{
+    /* background-image: url("http://localhost/ileys/wp-content/uploads/2018/08/philip-brown-542178-unsplash-1-300x169.jpg"); */
+    height:300px; width:300px;
+     border-radius:50%;
+     background-position:center; 
+     background-size:cover;
   }

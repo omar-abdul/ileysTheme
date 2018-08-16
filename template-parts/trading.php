@@ -5,7 +5,7 @@
         <div class="title text-center">
             <h4><?php echo $page->post_title;  ?> </h4>
         </div><!--title -->
-    <div class="row align-items-start">
+    <div class="row align-items-center">
 
         <?php if(get_theme_mod('ileys_trading_dropdownpages')!=0):?>
 
@@ -28,10 +28,14 @@
 
         </div><!--col-sm-6 -->
 
-        <div class="col-lg ">
+        <div class="col-lg-4  mt-3 mb-5 text-center">
 
 
-            <div class="section-image"><?php echo get_the_post_thumbnail($page->ID, array(500,300) );?></div>
+                <div class="section-image">
+                    <div class='trade-img' style="background-image:url('<?php echo get_the_post_thumbnail_url($page->ID);?>')">
+                           
+                </div>
+            </div>
 
         </div>
 <?php endif;?>

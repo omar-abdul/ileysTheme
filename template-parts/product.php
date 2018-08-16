@@ -8,6 +8,7 @@ $args = array(
 );
 $posts = get_posts($args);
 
+if($cat !==0):
 
 ?>
 <section class="products">
@@ -29,7 +30,6 @@ $posts = get_posts($args);
 
             <div class="row align-items-center">
             <?php foreach ($posts as $post):?>
-           
 
            
                 <div class="col-md"> 
@@ -45,6 +45,7 @@ $posts = get_posts($args);
                 
                 </div><!--col-md-->
                 <?php endforeach;?>
+                <?php wp_reset_postdata();?>
 
             </div><!--row-->
             <div class="row  text-center p-5">
@@ -57,5 +58,5 @@ $posts = get_posts($args);
 
     </div><!--main-content-->
 
-
+<?php endif; ?>
 </section>

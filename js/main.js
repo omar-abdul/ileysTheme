@@ -26,4 +26,19 @@
         });
     })
 
+    $(window).scroll(function(){
+        var about = $('#about').height();
+        console.log(about)
+        if(window.scrollY >= about-100){
+            $('header').addClass('bg-white box-shadow');
+            $('header').removeClass('bg-transparent',200);
+
+        }
+        else{
+            $('header').addClass('bg-transparent',200);
+            $('header').removeClass('bg-white  box-shadow');  
+        }
+        
+    });
+
 })(jQuery)
