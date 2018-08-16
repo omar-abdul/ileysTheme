@@ -116,8 +116,8 @@ function ileys_customize_register($wp_customize){
         $wp_customize->add_section('ileys_promotion_section',
         
         array(
-            'title'=>('Promotional section '),
-            'description'=> esc_attr('Choose what page appears on the trading section'),
+            'title'=>__('Promotional section '),
+            'description'=> __('Choose what page appears on the trading section'),
             'panel'=>'ileys_section_panel'
         )
     );

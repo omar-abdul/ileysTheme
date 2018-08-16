@@ -3,6 +3,10 @@
     $(document).click(function(){
         $('.submenu-dropdown').removeClass('submenu-dropdown-active',200);
     })
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
 
     $(".icon").click(function(){
         $(".icon").toggleClass("active");
@@ -12,6 +16,14 @@
         e.preventDefault();
         e.stopPropagation();
         $('.submenu .submenu-dropdown').toggleClass('submenu-dropdown-active',200)
+    })
+    $(".lightbox-link").click(function(e){
+
+        $('.lightbox-content img').attr('src',e.target.src);
+        $('#myLightbox').lightbox({
+            show:true,
+            backdrop:false
+        });
     })
 
 })(jQuery)

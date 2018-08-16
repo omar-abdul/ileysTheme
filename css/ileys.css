@@ -11,6 +11,11 @@
 /*
 Navigation styles
 */
+*{
+    font-family: 'Lato', sans-serif;
+
+
+}
 
 .admin-bar-fixed{
     position: fixed;
@@ -385,9 +390,81 @@ header nav:after {
       left:0;
       bottom:0;
   }
+  section .title {
+      font-family:'Comfortaa', cursive;
+      font-weight: bold;
+      font-size: 30px;
+      padding-bottom:.5em;
+      
+      
+  }
+
+
+  section .main-content {
+      margin-top:1em;
+      margin-bottom:1em;
+  }
 
   .about { 
       padding-top:20px;
       padding-bottom:20px;
+      margin-bottom:5em;
   }
 
+  .products {
+      background :#e2edff;
+      padding: 2em;
+      position:relative;
+
+  }
+  .products:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -36px;
+    width: 100%;
+    height: 60px;
+    background: #e2edff;
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-backface-visibility: hidden;
+  }
+.trading {
+
+    background: #f25e5e;
+    color:#fff;
+    position: relative;
+    padding:3em;
+}
+.btn-trade {
+    background: #7ec4f7;
+    color:#fefefe;
+}
+.btn-trade a{
+    text-decoration: none;
+}
+.btn-trade:hover ,.btn-trade:focus{
+    background: #64a9db;
+     color:#fefefe;
+}
+
+.trading:before {
+    content: '';
+    position: absolute;
+    z-index:2;
+    left: 0;
+    top: -35px;
+    width: 100%;
+    height: 60px;
+    background: #f25e5e;
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-backface-visibility: hidden;
+
+  }
