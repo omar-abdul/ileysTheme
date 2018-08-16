@@ -3,27 +3,33 @@
 
     <div class="container"> 
 
-        <div class="row text-center">
+        <div class="row align-items-center">
             <?php if(get_theme_mod('ileys_dropdownpages')!=0):?>
-            <div class="col-sm-4 ftrd-img">
+            <div class="col-lg ftrd-img">
                 <?php $page = get_post(get_theme_mod('ileys_dropdownpages')); ?>
-                <div class="section-image"><?php echo get_the_post_thumbnail($page->ID, 'thumbnail' );?></div>
+                <div class="section-image"><?php echo get_the_post_thumbnail($page->ID, array(555,355) );?></div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg">
                 <div class="title">
                     <h4><?php echo $page->post_title;  ?> </h4>
-                </div>
+                </div><!--title -->
                 <div class="excerpt">
-                    <p><?php if($page->post_excerpt !==''): echo $page->post_excerpt?>
-                        <?php else: echo $page->post_content;?>
-                    <?php endif; ?>  
+                    <p> 
+                <?php if($page): ?>
+                    <?php setup_postdata($post = $page);?>
 
+                    <?php the_excerpt();
+                    
+                    wp_reset_postdata();
+                    ?>
+                    <?php endif; ?>
                     </p>
-                </div>
+                <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-danger"><?php esc_html_e('Read More','btn_text_domain') ?></a>
+                </div><!--excerpt -->
 
 
-            </div>
+            </div><!--col-sm-6 -->
 <?php endif;?>
-        </div>
-    </div>
+        </div><!--row -->
+    </div><!--container -->
 </section>

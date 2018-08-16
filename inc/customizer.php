@@ -59,28 +59,27 @@ function ileys_customize_register($wp_customize){
         )
     );
 
-            $wp_customize->add_setting( 'dropdown_posts_control',
+            $wp_customize->add_setting( 'ileys_category_setting',
             array(
-            'default' => '',
-            'transport' => 'postMessage',
+            'default' => 0,
+            'transport' => 'refresh',
             "type"=>'theme_mod',
-            'sanitize_callback' => 'absint'
+            'sanitize_callback' => 'absint',
+            'priority'=>1
             )
         );
-        $wp_customize->add_control( new Skyrocket_Dropdown_Posts_Custom_Control( $wp_customize, 'sample_dropdown_posts_control',
-            array(
-            'label' => __( 'Product Section' ),
-            'description' => esc_html__( 'Post featured images will appear in gallery form' ),
-            'section' => 'ileys_product_section',
-            'input_attrs' => array(
-                'posts_per_page' => 4,
-                'orderby' => 'name',
-                'order' => 'ASC',
-            ),
-            'settings'=>'dropdown_posts_control'
-            )
-        ) );
 
+
+            $wp_customize->add_control(new My_Dropdown_Category_Control($wp_customize,'ileys_category_dropdown',
+        
+            array(
+               'label'=>__('Category to chose posts from'),
+               'description'=>esc_html__('Optionally enter cateogry to choose posts from '),
+               'section'=>'ileys_product_section',
+               'settings'=>'ileys_category_setting' 
+            )    
+        )
+    );
 
 
         // Trading Section
@@ -117,8 +116,8 @@ function ileys_customize_register($wp_customize){
         $wp_customize->add_section('ileys_promotion_section',
         
         array(
-            'title'=>('Promotional section '),
-            'description'=> esc_attr('Choose what page appears on the trading section'),
+            'title'=>__('Promotional section '),
+            'description'=> __('Choose what page appears on the trading section'),
             'panel'=>'ileys_section_panel'
         )
     );

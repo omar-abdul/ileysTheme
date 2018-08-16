@@ -1,39 +1,22 @@
 
-/*!
- * Start Bootstrap - Full Slider (https://startbootstrap.com/template-overviews/full-slider)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full-slider/blob/master/LICENSE)
- */
+/*
 
- .carousel-item {
-    height: 100vh;
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
+####################
+# Ileys theme css  #
+####################
+
+*/
 
 
-.slider-container {
-    padding:0px;
-}
-.carousel-item::before{
-  display: block;
-  position: relative;
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6));
-  height: 100%;
-  width: 100%;
-  content: '';
-  position: absolute;
-  max-height: 100%;
-  max-width: 100%;
-  top: 0;
-  left: 0;
+/*
+Navigation styles
+*/
+*{
+    font-family: 'Lato', sans-serif;
+
 
 }
+
 .admin-bar-fixed{
     position: fixed;
 
@@ -65,17 +48,7 @@
     margin:0;
     padding:0;
 
-
 }
-/* .site-nav .sub-menu  li {
-
-    border-bottom: 1px solid rgb(100, 97, 97);
-
-} */
-/* .site-nav .sub-menu a{
-    padding:1em 0 1em 8em ; 
-} */
-
 
 .site-nav  li {
 
@@ -158,9 +131,16 @@
 
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
-.box-shadow { box-shadow: 0 .5em 6px rgba(0, 0, 0, .3); }
+.box-shadow { box-shadow: 0 .2em 2px rgba(0, 0, 0, .3); }
 
+/* @media  (min-width:1028px){
+    .col-sm{
+        flex:1;
+        width:100%;
+    }
+} */
 
+/* Desktop nav styles */
 @media only screen and (min-width: 768px) {
     .icon{
         display: none;
@@ -332,7 +312,7 @@
     top:0;
     transform: rotate(135deg);
 }
-
+/* 
 header nav:after {
     
       content: "";
@@ -340,7 +320,7 @@ header nav:after {
       display: block;
     
       clear: both;
-}
+} */
 
 .caret {
     position: relative;
@@ -372,15 +352,110 @@ header nav:after {
 
 
 
+  /* Carousel styles */
+  .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+
+
+.slider-container {
+    padding:0px;
+}
+.carousel-item::before{
+  display: block;
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6));
+  height: 100%;
+  width: 100%;
+  content: '';
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+
   .carousel-caption{
       top:50%;
       right:70%;
       left:0;
       bottom:0;
   }
+  section .title {
+      font-family:'Comfortaa', cursive;
+      font-weight: bold;
+      font-size: 30px;
+      padding-bottom:.5em;
+      
+      
+  }
+
+
+  section .main-content {
+      margin-top:1em;
+      margin-bottom:1em;
+  }
 
   .about { 
       padding-top:20px;
       padding-bottom:20px;
+      margin-bottom:5em;
+  }
+
+  .products {
+      background :#e2edff;
+      padding: 2em;
+      position:relative;
+
+  }
+  .products:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -36px;
+    width: 100%;
+    height: 60px;
+    background: #e2edff;
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-backface-visibility: hidden;
+  }
+.trading {
+
+    background: #ff5e5e;
+    color:#fff;
+    position: relative;
+    padding:3em;
+}
+
+
+.trading:before {
+    content: '';
+    position: absolute;
+    z-index:2;
+    left: 0;
+    top: -35px;
+    width: 100%;
+    height: 60px;
+    background: #ff5e5e;
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+    -webkit-backface-visibility: hidden;
+
   }
 
