@@ -18,8 +18,6 @@ function custom_theme_setup(){
     set_post_thumbnail_size( 150, 150 );
 
     $defaults = array(
-        'width'=>0,
-        'height'=>60,
         'uploads'=>true
     );
 

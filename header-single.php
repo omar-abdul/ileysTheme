@@ -24,14 +24,18 @@ Header to display on all pages except front page
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-xs-12">
-                <div class="header-container text-center" style="background-image:url(<?php header_image();?>)">
+            <div class="col-12">
+                <div class="header-container  text-center" style="background-image:url(<?php header_image(); ?>);">
+                    
                     <div class="header-content">
-
-                    </div>
-                    <div class="nav-container"></div>
+                    
+                    </div><!--header-content-->
+                    <div class="nav-container">
+                    
+                    </div><!--header-content-->
+                
                 </div>
+            </div><!--.col-xs-12-->
 
-            </div> <!--.col-xs-12-->
         </div><!--.row-->
     </div><!--.container-fluid -->
