@@ -22,7 +22,7 @@
                 ?>
                 <?php endif; ?>
                 </p>
-            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-trade"><?php esc_html_e('Read More','btn_text_domain') ?></a>
+            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-info btn-lg"><?php esc_html_e('Read More','btn_text_domain') ?></a>
             </div><!--excerpt -->
 
 
@@ -32,7 +32,7 @@
 
 
                 <div class="section-image">
-                    <div class='trade-img' style="background-image:url('<?php echo get_the_post_thumbnail_url($page->ID);?>')">
+                    <div class='trade-img' style="background-image:url('<?php echo get_the_post_thumbnail_url($page->ID,'large');?>')">
                            
                 </div>
             </div>

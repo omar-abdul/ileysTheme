@@ -28,7 +28,7 @@ if($cat !==0):
         <div class="container"> 
 
 
-            <div class="row align-items-center">
+            <div class="row align-items-center text-center">
             <?php foreach ($posts as $post):?>
 
            
@@ -36,7 +36,7 @@ if($cat !==0):
                 <a href="<?php echo get_the_post_thumbnail_url($post->ID)?>" data-toggle="lightbox" data-gallery="example-gallery"> <?php 
                 $arr = array(
                     'id'=>'img_'.$post->ID,
-                    'class'=>'img-responsive'
+                    'class'=>' img-responsive'
                 ) ;
                 
                 echo get_the_post_thumbnail($post->ID,$arr);

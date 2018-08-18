@@ -81,6 +81,28 @@ function ileys_customize_register($wp_customize){
         )
     );
 
+            $wp_customize->add_setting( 'product_button_url',
+            array(
+            'default' => 0,
+            'transport' => 'refresh',
+            "type"=>'theme_mod',
+            'sanitize_callback' => 'esc_url',
+            'priority'=>2
+            )
+        );
+
+        $wp_customize->add_control('product_button_url',
+        
+        array(
+           'label'=>__('Button url target'),
+           'description'=>esc_html__(' '),
+           'section'=>'ileys_product_section',
+           'type'=>'url',
+           'input_attrs'=>array(
+               'placeholder'=>__('Enter url to go to ')
+           )
+        )    
+           );
 
         // Trading Section
         $wp_customize->add_section('ileys_trading_section',
@@ -117,7 +139,7 @@ function ileys_customize_register($wp_customize){
         
         array(
             'title'=>__('Promotional section '),
-            'description'=> __('Choose what page appears on the trading section'),
+            'description'=> __('Edit Promotion section'),
             'panel'=>'ileys_section_panel'
         )
     );
@@ -150,20 +172,21 @@ function ileys_customize_register($wp_customize){
         )
      ) );
 
-     $wp_customize->add_setting( 'sample_default_text',
+     $wp_customize->add_setting( 'promotion_section_text',
      array(
-        'default' => 'asfdfoh',
+        'default' => '',
         'transport' => 'refresh',
-        "type"=>'theme_mod'
+        "type"=>'theme_mod',
+        'sanitize_callback'=>'esc_attr'
      )
   );
    
-  $wp_customize->add_control( 'sample_default_text',
+  $wp_customize->add_control( 'promotion_section_text',
      array(
-        'label' => __( 'Default Text Control' ),
-        'description' => esc_html__( 'Text controls Type can be either text, email, url, number, hidden, or date' ),
+        'label' => __( 'What text should appear on the promotion section' ),
+        'description' => esc_html__( 'Choose text to show over image' ),
         'section' => 'ileys_promotion_section',
-        "setting" =>'sample_default_text',
+        "setting" =>'promotion_section_text',
         'priority' => 10, // Optional. Order priority to load the control. Default: 10
         'type' => 'text', // Can be either text, email, url, number, hidden, or date
         'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
@@ -174,6 +197,51 @@ function ileys_customize_register($wp_customize){
         ),
      )
   );
+
+                $wp_customize->add_setting( 'promotion_button_text',
+                array(
+                    'default' => 0,
+                    'transport' => 'refresh',
+                    "type"=>'theme_mod',
+                    'sanitize_callback' => 'esc_attr',
+                    'priority'=>2
+                )
+                );
+
+                $wp_customize->add_control('promotion_button_text',
+
+                array(
+                    'label'=>__('Button text'),
+                    'description'=>esc_html__(' '),
+                    'section'=>'ileys_promotion_section',
+                    'type'=>'url',
+                    'input_attrs'=>array(
+                        'placeholder'=>__('Enter text ')
+                    )
+                )    
+                );
+            $wp_customize->add_setting( 'promotion_button_url',
+            array(
+                'default' => 0,
+                'transport' => 'refresh',
+                "type"=>'theme_mod',
+                'sanitize_callback' => 'esc_url',
+                'priority'=>2
+             )
+            );
+
+            $wp_customize->add_control('promotion_button_url',
+
+            array(
+                'label'=>__('Button url target'),
+                'description'=>esc_html__(' '),
+                'section'=>'ileys_promotion_section',
+                'type'=>'url',
+                'input_attrs'=>array(
+                    'placeholder'=>__('Enter url to go to ')
+                )
+             )    
+            );
 }
 
 add_action('customize_register','ileys_customize_register');
