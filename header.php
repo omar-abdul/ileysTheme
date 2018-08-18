@@ -32,7 +32,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
 
 
 
-    <header class="p-3 px-md-4 mb-3  main-page bg-transparent sticky-top">
+    <header class="p-3 px-md-4 mb-3  main-page bg-transparent fixed-top">
       <h5 class="float-left  font-weight-normal">Ileys Enterprises</h5>
       <nav class="site-nav">
 

@@ -31,7 +31,7 @@ Header to display on all pages except front page
                         <h3><span class="d-none"><?php echo bloginfo('name')?></span></h3>
                     </div><!--header-content-->
                     <div class="nav-container">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-ileys ">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-ultra-light navbar-ileys ">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                  <span class="navbar-toggler-icon"></span> Menu
                             </button>
