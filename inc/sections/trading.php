@@ -1,4 +1,8 @@
-<?php $page = get_post(get_theme_mod('ileys_trading_dropdownpages')); ?>
+<?php $page = get_post(get_theme_mod('ileys_trading_dropdownpages')); 
+
+    if($page !==0):
+
+?>
 <section class="trading">
 
 <div class="container"> 
@@ -7,7 +11,7 @@
         </div><!--title -->
     <div class="row align-items-center">
 
-        <?php if(get_theme_mod('ileys_trading_dropdownpages')!=0):?>
+
 
         <div class="col-lg">
 
@@ -22,7 +26,7 @@
                 ?>
                 <?php endif; ?>
                 </p>
-            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-trade"><?php esc_html_e('Read More','btn_text_domain') ?></a>
+            <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-info btn-lg"><?php esc_html_e('Read More','btn_text_domain') ?></a>
             </div><!--excerpt -->
 
 
@@ -32,13 +36,14 @@
 
 
                 <div class="section-image">
-                    <div class='trade-img' style="background-image:url('<?php echo get_the_post_thumbnail_url($page->ID);?>')">
+                    <div class='trade-img' style="background-image:url('<?php echo get_the_post_thumbnail_url($page->ID,'large');?>')">
                            
                 </div>
             </div>
 
         </div>
-<?php endif;?>
+
     </div><!--row -->
 </div><!--container -->
 </section>
+<?php endif;?>

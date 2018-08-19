@@ -24,14 +24,31 @@ Header to display on all pages except front page
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-xs-12">
-                <div class="header-container text-center" style="background-image:url(<?php header_image();?>)">
+            <div class="col-12">
+                <header class="header-container  text-center" style="background-image:url(<?php header_image(); ?>);">
+                    
                     <div class="header-content">
+                        <h3><span class="d-none"><?php echo bloginfo('name')?></span></h3>
+                    </div><!--header-content-->
+                    <div class="nav-container">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-ultra-light navbar-ileys ">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                 <span class="navbar-toggler-icon"></span> Menu
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <?php wp_nav_menu(array(
+                                        'theme_location'=>'primary',
+                                        'container'=>false,
+                                        'menu_class'=>'navbar-nav mx-auto',
+                                        'walker'=>new Walker_Nav_Single_Page_Primary()
+                                    )); ?>
+                            </div>
+                        </nav>
+                    
+                    </div><!--nav-container-->
+                
+                </header>
+            </div><!--.col-12-->
 
-                    </div>
-                    <div class="nav-container"></div>
-                </div>
-
-            </div> <!--.col-xs-12-->
         </div><!--.row-->
     </div><!--.container-fluid -->

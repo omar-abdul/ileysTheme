@@ -1,10 +1,10 @@
-
+<?php if(get_theme_mod('ileys_dropdownpages')!=0):?>
 <section class="about" id="about">
 
     <div class="container"> 
 
         <div class="row align-items-center">
-            <?php if(get_theme_mod('ileys_dropdownpages')!=0):?>
+
             <div class="col-lg ftrd-img">
                 <?php $page = get_post(get_theme_mod('ileys_dropdownpages')); ?>
                 <div class="section-image"><?php echo get_the_post_thumbnail($page->ID, array(555,355) );?></div>
@@ -29,7 +29,8 @@
 
 
             </div><!--col-sm-6 -->
-<?php endif;?>
+
         </div><!--row -->
     </div><!--container -->
 </section>
+<?php endif;?>
