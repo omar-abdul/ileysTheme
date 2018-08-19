@@ -1,4 +1,8 @@
-<?php $page = get_post(get_theme_mod('ileys_trading_dropdownpages')); ?>
+<?php $page = get_post(get_theme_mod('ileys_trading_dropdownpages')); 
+
+    if($page !==0):
+
+?>
 <section class="trading">
 
 <div class="container"> 
@@ -7,7 +11,7 @@
         </div><!--title -->
     <div class="row align-items-center">
 
-        <?php if(get_theme_mod('ileys_trading_dropdownpages')!=0):?>
+
 
         <div class="col-lg">
 
@@ -38,7 +42,8 @@
             </div>
 
         </div>
-<?php endif;?>
+
     </div><!--row -->
 </div><!--container -->
 </section>
+<?php endif;?>

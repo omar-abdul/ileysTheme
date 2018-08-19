@@ -52,5 +52,6 @@ if($cat !==0):
 
     </div><!--main-content-->
 
-<?php endif; ?>
+
 </section>
+<?php endif; ?>

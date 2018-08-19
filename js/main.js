@@ -28,17 +28,38 @@
 
     $(window).scroll(function(){
         var about = $('#about').height();
-        console.log(about)
         if(window.scrollY >= about-100){
-            $('header').addClass('bg-white',200);
-            $('header').removeClass('bg-transparent');
-
+            $('#front-header').addClass('bg-white',200);
         }
         else{
-            $('header').addClass('bg-transparent',200);
-            $('header').removeClass('bg-white ');  
+            $('#front-header').removeClass('bg-white');
+
+ 
         }
+
+
         
     });
+    $('#front-header').hover(function(){
+        console.log('sdafsd')
+        $('#front-header').removeClass('bg-transparent');
+        isthere= $('#front-header').hasClass('bg-white');
+        if(isthere){
+            
+            return;
+        }
+        else{
+            $('#front-header').addClass('bg-white',200); 
+        }
+
+    }, function(){
+        var about = $('#about').height();
+        if(window.scrollY >=about-100 ){
+            return;
+        }
+        $('#front-header').removeClass('bg-white');
+    });
+
+
 
 })(jQuery)
