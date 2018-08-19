@@ -572,6 +572,11 @@ header .site-nav:after {
     padding:20px;
 }
 
+.col-12{
+    padding-right:0px;
+    padding-left:0px;
+
+}
 
 .footer {
     background:#5c5f63;
@@ -581,6 +586,14 @@ header .site-nav:after {
     height: auto;
     overflow: hidden;
 
+}
+
+.footer-menu a {
+    color:#d3d2d2;
+    
+}
+.footer-menu a:hover {
+    color:#fefefe;
 }
 
 .footer-menu .menu {
@@ -634,4 +647,14 @@ article a {
 }
 article a:hover {
     color:#99c0ff;
+}
+
+article .page-container{
+    min-height:400px;
+}
+.single-posted-on {
+    margin-left:auto;
+}
+.single-posted-in{
+    margin-right:auto;
 }

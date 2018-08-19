@@ -32,16 +32,12 @@
             $('#front-header').addClass('bg-white',200);
         }
         else{
-            $('#front-header').removeClass('bg-white');
-
- 
-        }
-
-
-        
+            $('#front-header').removeClass('bg-white'); 
+        }     
     });
+    
     $('#front-header').hover(function(){
-        console.log('sdafsd')
+
         $('#front-header').removeClass('bg-transparent');
         isthere= $('#front-header').hasClass('bg-white');
         if(isthere){

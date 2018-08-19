@@ -6,7 +6,7 @@ Generic template Standard Post Format
 
 */?>
 
-<article id =post-"<?php the_ID();?>" <?php post_class();?>>
+<article id ="post-<?php the_ID(); ?>" <?php post_class();?>>
 <div class="container">
 <div class="card text-center">
     <?php  if(has_post_thumbnail()):?>
@@ -17,9 +17,9 @@ Generic template Standard Post Format
   </div>
   <div class="card-body">
     <header>
-        <a href="<?php get_permalink();?>"><?php the_title('<h3 class="card-title">','</h3>');?></a>
+        <a href="<?php the_permalink();?>"><?php the_title('<h3 class="card-title">','</h3>');?></a>
     </header>
-    <p class="card-text"> <?php the_excerpt();?>.</p>
+    <p class="card-text"> <?php the_excerpt();?></p>
   </div>
   <div class="card-footer text-muted">
      <?php echo ileys_post_data();?>
