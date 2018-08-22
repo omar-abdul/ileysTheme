@@ -12,7 +12,7 @@ Generic template Standard Post Format
     <?php  if(has_post_thumbnail()):?>
             <div class="standard-featured"></div>
 
-    <div class="card-header" style='background-image:url("<?php echo get_the_post_thumbnail_url(); ?>");'>
+    <div class="card-header" style='background-image:url("<?php echo get_thumbnail_default(); ?>");'>
     <?php endif;?>
   </div>
   <div class="card-body">

@@ -1,5 +1,5 @@
 <?php
-$cat = get_theme_mod('ileys_category_setting',0);
+$cat = get_theme_mod('ileys_category_partner_setting',0);
 
 
 $args = array(

@@ -3,6 +3,7 @@
  require get_template_directory() . '/inc/function-admin.php';
 
  require get_template_directory(). '/inc/enqueue.php';
+ require get_template_directory(). '/inc/ajax.php';
 
  show_admin_bar(false);
 
@@ -15,7 +16,7 @@ function custom_theme_setup(){
         )
     );
     add_theme_support('post-thumbnails');
-    set_post_thumbnail_size( 150, 150 );
+    set_post_thumbnail_size( 150, 150, true );
 
     $defaults = array(
         'uploads'=>true
@@ -105,6 +106,31 @@ function single_ileys_post_data(){
         return '<span class="single-posted-on float-right"> Posted: '.$posted_on.'</span><span class="single-posted-in float-left"> In: '.$output.'</span>';
  }
 
+ if(!function_exists('exclude_category')):
+     function exclude_category($query){
+        if($query->is_home() && $query->is_main_query() ):
+            $cat =intval('-'.get_theme_mod('ileys_category_setting',0)); 
+            if(!$cat){
+                $cat = 0;
+            }
+
+            $query->set('cat',  $cat);
+        endif;
+     }
+     add_action('pre_get_posts','exclude_category');
+    endif;
+ 
+if(!function_exists('get_thumbnail_default')):
+
+    function get_thumbnail_default(){
+        $id = get_the_ID();
+        if(has_post_thumbnail()):
+            return get_the_post_thumbnail_url($id);
+        else:
+            return get_template_directory().'/imgs/default.png';
+        endif;
+    }
+endif;
 
 require get_template_directory(). '/inc/walker.php';
 require get_template_directory(). '/inc/customizer.php';

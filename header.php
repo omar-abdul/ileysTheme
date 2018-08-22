@@ -32,7 +32,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
 
 
 
-    <header class="p-3 px-md-4 mb-3  main-page bg-transparent fixed-top" id="front-header">
+    <header class="p-3 px-md-4 mb-3  main-page  fixed-top" id="front-header">
       <h5 class="float-left  font-weight-normal">Ileys Enterprises</h5>
       <nav class="site-nav">
 
@@ -42,7 +42,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
             'walker'=> new Walker_Nav_Primary()
             ));?>
       </nav>
-      <div class="icon <?php $x= is_admin_bar_showing()?print 'top2':print 'top75'; ?>">
+      <div class="icon top2">
                 <div class="hamburger">
                 </div>
         </div>
