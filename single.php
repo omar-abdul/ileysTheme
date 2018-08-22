@@ -11,6 +11,8 @@
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+        <div class="container">
+
 
 			<?php
 			if ( have_posts() ) :
@@ -23,18 +25,17 @@
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+                    get_template_part( 'template-parts/single', get_post_format() );
+                    the_post_navigation();
 
-				endwhile;
+                    if(comments_open()):
+                        comments_template();
+                    endif;
 
-
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif;
+            endwhile;
+		endif;
 			?>
-
+        </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

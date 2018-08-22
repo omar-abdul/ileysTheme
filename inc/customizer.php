@@ -242,6 +242,39 @@ function ileys_customize_register($wp_customize){
                 )
              )    
             );
+
+
+            $wp_customize->add_section('ileys_partner_section',
+        
+            array(
+                'title'=>('Partner section '),
+                'description'=> esc_attr('Choose Posts that appear on section'),
+                'panel'=>'ileys_section_panel'
+            )
+        );
+    
+                $wp_customize->add_setting( 'ileys_category_partner_setting',
+                array(
+                'default' => 0,
+                'transport' => 'refresh',
+                "type"=>'theme_mod',
+                'sanitize_callback' => 'absint',
+                'priority'=>1
+                )
+            );
+    
+    
+                $wp_customize->add_control(new My_Dropdown_Category_Control($wp_customize,'ileys_category_partner_setting',
+            
+                array(
+                   'label'=>__('Category to chose posts from'),
+                   'description'=>esc_html__('Optionally enter cateogry to choose posts from '),
+                   'section'=>'ileys_partner_section',
+
+                )    
+            )
+        );
+    
 }
 
 add_action('customize_register','ileys_customize_register');

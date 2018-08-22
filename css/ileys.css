@@ -8,15 +8,32 @@
 */
 
 
-/*
-Navigation styles
-*/
+
 *{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, Verdana sans-serif;
+    padding: 0;
+    margin:0;
 
 
 }
 
+
+a:hover {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+h1, h2, h3, h4, h5,h6{
+    font-family:'Comfortaa', cursive;
+}
+p{
+    padding: 0;
+}
+
+/*
+Navigation styles
+*/
 .admin-bar-fixed{
     position: fixed;
 
@@ -70,7 +87,7 @@ Navigation styles
 
 .site-nav  a:hover, .site-nav a:focus {
     background:rgb(161, 210, 250);  
-    color:#555658;
+    color:#333030;;
 }
 
   .site-nav a:focus .caret::before, .site-nav a:focus .caret::after{
@@ -82,10 +99,10 @@ Navigation styles
 }
 
 
-.submenu{
+/* .submenu{
     position: relative;
 
-}
+} */
 
 .submenu  .submenu-dropdown{
     /* padding-left:2em; */
@@ -136,24 +153,35 @@ Navigation styles
     box-shadow: 0 .2em 2px rgba(0, 0, 0, .3);
 }
 
-/* @media  (min-width:1028px){
-    .col-sm{
-        flex:1;
-        width:100%;
-    }
-} */
+
+
+
+
 
 /* Desktop nav styles */
 @media only screen and (min-width: 768px) {
+    
     .icon{
         display: none;
     }
-    .site-nav{
+     .site-nav{
         height:auto;
         overflow: visible;
         position: relative;
         background: rgba(0, 0, 0, 0);
         float: right;
+    }
+    
+
+    .single-page.site-nav {
+        float: none;
+        top:90%;
+        display:flex;
+        flex-direction: row;
+        font-size: 13px;
+        align-items: center;
+        justify-content: center;
+    
     }
 
     .submenu {
@@ -250,9 +278,47 @@ Navigation styles
     .site-nav a:hover,.site-nav a:focus{
         background:rgba(0,0,0,0);
     }
+    #front-header:hover {
+        background-color:#fff;
+        box-shadow: 0 .2em 2px rgba(0, 0, 0, .3);
+    }
+}
+.header-container {
+    
+    height:300px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom:3em;
+
 }
 
+.navbar-ileys  {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    left:0;
+    
+}
+.bg-ultra-light {
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 -2px 2px rgba(0, 0,0,0.4)
+}
+.navbar-light .navbar-nav .nav-link {
+    color:rgb(44, 43, 43);
 
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color:rgb(102, 134, 163);
+}
+.navbar-light .navbar-toggler {
+    color: rgb(0,0,0);
+    border-color: rgba(0,0,0,.4);
+
+}
 .icon {
     position: absolute;
     top:0.75em;
@@ -262,12 +328,13 @@ Navigation styles
     cursor: pointer;
 
 }
+
 .top2{
     top:2.5em;
 }
-.top75{
+/* .top75{
     top:2em;
-}
+} */
 .hamburger {
     width:35px;
     height:4px;
@@ -315,15 +382,15 @@ Navigation styles
     top:0;
     transform: rotate(135deg);
 }
-/* 
-header nav:after {
+
+header .site-nav:after {
     
       content: "";
     
       display: block;
     
       clear: both;
-} */
+}
 
 .caret {
     position: relative;
@@ -332,7 +399,7 @@ header nav:after {
     
 }
     
-.submen:before {
+.caret:before {
     content: '';
     position: absolute;
     top: 40%;
@@ -472,7 +539,6 @@ header nav:after {
   }
 
   .trade-img{
-    /* background-image: url("http://localhost/ileys/wp-content/uploads/2018/08/philip-brown-542178-unsplash-1-300x169.jpg"); */
     height:300px; width:300px;
      border-radius:50%;
      background-position:center; 
@@ -480,16 +546,13 @@ header nav:after {
   }
  .container-fluid{
      padding: 0;
+     margin:0;
  }
  section .promotion {
      margin-top:0;
  }
  .promotion .title h4 {
      color:#fefefe;
-     font-size: 80px;
- }
-
-  .promotion {
       width:100%;
       height:300px;
       background-position: center center;
@@ -500,4 +563,94 @@ header nav:after {
   }
   .promo-content {
     padding:60px  7px;
+}
+.partner {
+    padding:20px;
+}
+
+.col-12{
+    padding-right:0px;
+    padding-left:0px;
+
+}
+
+.footer {
+    background:#5c5f63;
+    color:#fefefe;
+
+    border-top:2px solid #fff;
+    height: auto;
+    overflow: hidden;
+
+}
+
+.footer-menu a {
+    color:#d3d2d2;
+    
+}
+.footer-menu a:hover {
+    color:#fefefe;
+}
+
+.footer-menu .menu {
+    display: inline-flex;
+    
+
+}
+.footer-menu .menu>li:not(:first-child) {
+    margin-left:4em;
+}
+.footer-menu .menu>li>ul{
+    margin-left: 18px;
+}
+.footer-credit {
+    width: 100%;
+    text-align: center;
+    background: #2d2e2e;
+    color:#fefefe;
+    overflow: hidden;
+    font-size: 13px;
+    
+    padding-top: 3px;
+
+
+}
+
+
+/* Generic styles for components */
+article .container {
+    max-width: 60%;
+}
+
+article .card {
+    margin-bottom:3em;
+    margin-top:3em;
+}
+
+.card-header {
+    height:200px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+article a {
+    color:#333030;
+}
+article a:hover {
+    color:#99c0ff;
+}
+
+article .page-container{
+    min-height:400px;
+}
+.single-posted-on {
+    margin-left:auto;
+}
+.single-posted-in{
+    margin-right:auto;
 }
