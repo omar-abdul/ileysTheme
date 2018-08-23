@@ -15,7 +15,8 @@
     $(".submenu-toggle").click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        $('.submenu .submenu-dropdown').toggleClass('submenu-dropdown-active',200)
+
+        $(this).siblings('.submenu .submenu-dropdown').toggleClass('submenu-dropdown-active',200)
     })
     $(".lightbox-link").click(function(e){
 

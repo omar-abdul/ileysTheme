@@ -17,16 +17,23 @@
                         
 
                         </div>
-                       <?php if(!empty(esc_attr(get_option('option_fb'))) &&
+                       <?php if(!empty(esc_url(get_option('option_fb'))) &&
                                 !empty(esc_attr(get_option('option_tw'))) && 
-                                !empty(esc_attr(get_option('option_lin')))
-                                ):?>
+                                !empty(esc_url(get_option('option_lin')))
+                                ):
+                                
+                                $tw = 'https://twitter.com/'.esc_attr(get_option('option_tw'));
+                                
+                                ?>
                         <div class="row align-items-center">
                                 <div class="col">
                                         <div class="social-media">
-                                                <a class="social-links">
-                                                
-                                                </a>
+                                                <span>
+                                                        <a href="<?php echo esc_url(get_option('option_lin'))?>" target="_blank"><i class="icon-social-linkedin bg-social"></i></a>
+                                                        <a href="<?php echo esc_url($tw)?>" target="_blank"><i class="icon-social-twitter"></i></a>
+                                                        <a href="<?php echo esc_url(get_option('option_fb'))?>" target="_blank"><i class="icon-social-facebook bg-social"></i></a>
+
+                                                </span>
                                         </div>
                                 </div><!--col-->
                                 <?php endif; ?>

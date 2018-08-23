@@ -19,6 +19,7 @@
   font-weight: normal;
   font-style: normal;
 
+
 }
 
 [data-icon]:before {
@@ -42,7 +43,7 @@
   font-variant: normal !important;
   text-transform: none !important;
   speak: none;
-  font-size: 20px;
+  font-size: 60px;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,7 +76,7 @@ a:hover {
     text-decoration: none;
 }
 ul {
-    list-style: none;
+
 }
 h1, h2, h3, h4, h5,h6{
     font-family:'Comfortaa', cursive;
@@ -604,7 +605,7 @@ header .site-nav:after {
  section .promotion {
      margin-top:0;
  }
- .promotion .title h4 {
+ .promotion {
      color:#fefefe;
       width:100%;
       height:300px;
@@ -647,6 +648,7 @@ header .site-nav:after {
 
 .footer-menu .menu {
     display: inline-flex;
+    list-style: none;
     
 
 }
@@ -656,6 +658,46 @@ header .site-nav:after {
 .footer-menu .menu>li>ul{
     margin-left: 18px;
 }
+.footer .social-media a {
+    color:#ccc;    
+}
+.footer .social-media .icon-social-facebook:hover{
+    text-decoration: none;
+    color: #3B5998;
+
+}
+.footer .social-media .icon-social-twitter:hover{
+    text-decoration: none;
+    color: #1DA1F2;
+
+}
+.footer .social-media .icon-social-linkedin:hover{
+    text-decoration: none;
+    color:#0077B5;
+
+}
+
+.bg-social{
+    position: relative;
+    z-index: 5;
+}
+
+.bg-social:after{
+    content: '';
+    position: absolute;
+    bottom: 70%;
+    left: 16%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    z-index: -2;
+}
+.bg-social:hover:after{
+    background: #fff !important;
+}
+
+
 .footer-credit {
     width: 100%;
     text-align: center;
@@ -844,3 +886,4 @@ a img.aligncenter {
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
+

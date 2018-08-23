@@ -47,6 +47,7 @@ add_settings_section(
 
 
 
+
     
 
     //slider option fields  
