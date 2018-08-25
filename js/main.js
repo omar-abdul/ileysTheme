@@ -18,14 +18,14 @@
 
         $(this).siblings('.submenu .submenu-dropdown').toggleClass('submenu-dropdown-active',200)
     })
-    $(".lightbox-link").click(function(e){
+    // $(".lightbox-link").click(function(e){
 
-        $('.lightbox-content img').attr('src',e.target.src);
-        $('#myLightbox').lightbox({
-            show:true,
-            backdrop:false
-        });
-    })
+    //     $('.lightbox-content img').attr('src',e.target.src);
+    //     $('#myLightbox').lightbox({
+    //         show:true,
+    //         backdrop:false
+    //     });
+    // })
 
     $(window).scroll(function(){
         var about = $('#about').height();

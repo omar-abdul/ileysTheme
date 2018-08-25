@@ -32,6 +32,8 @@ function custom_theme_setup(){
 		'gallery',
 		'audio',
     ) );
+
+    add_post_type_support( 'page', 'excerpt' );
     
     
 }
@@ -125,7 +127,7 @@ if(!function_exists('get_thumbnail_default')):
     function get_thumbnail_default(){
         $id = get_the_ID();
         if(has_post_thumbnail()):
-            return get_the_post_thumbnail_url($id);
+            return get_the_post_thumbnail_url($id,'large');
         else:
             return get_template_directory().'/imgs/default.png';
         endif;

@@ -336,6 +336,9 @@ Navigation styles
         background-color:#fff;
         box-shadow: 0 .2em 2px rgba(0, 0, 0, .3);
     }
+
+
+
 }
 .header-container {
     
@@ -605,19 +608,27 @@ header .site-nav:after {
  section .promotion {
      margin-top:0;
  }
+
  .promotion {
-     color:#fefefe;
-      width:100%;
-      height:300px;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
+    color:#fefefe;
+    height:300px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    transform:translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
 
   }
+  
+
+
   .promo-content {
     padding:60px  7px;
 }
+
+
 .partner {
     padding:20px;
 }
@@ -698,6 +709,7 @@ header .site-nav:after {
 }
 
 
+
 .footer-credit {
     width: 100%;
     text-align: center;
@@ -714,7 +726,7 @@ header .site-nav:after {
 
 /* Generic styles for components */
 article .container {
-    max-width: 60%;
+    max-width:75%;
 }
 
 article .card {
@@ -730,6 +742,9 @@ article .card {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.card-text-wrapper ul {
+    list-style: none;
 }
 
 article a {
@@ -764,7 +779,7 @@ article .page-container{
 }
 
 .card {
-    max-width:300px;
+   
 }
 article.category-brands{
     display: inline-block;
@@ -887,3 +902,8 @@ a img.aligncenter {
 	/* Above WP toolbar. */
 }
 
+@media only screen and (min-width:768px) {
+    .promotion{
+        background-attachment: fixed;
+    }
+}

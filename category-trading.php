@@ -22,8 +22,8 @@ Custom Category page to display The Brand Category
 		<main id="main" class="site-main" role="main">
 			<div class="container">
 
-				<div class="row align-items-center justify-content-center">
-					<div class="col-12 col-md-8   offset-md-2   my-3 cat-content">
+				<div class="row  ">
+					<div class="col-12 col-md-10   offset-md-1  my-3 cat-content">
 
 			<?php
 			if ( have_posts() ) :
@@ -36,7 +36,7 @@ Custom Category page to display The Brand Category
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'categories/category','brand' );
+					get_template_part( 'categories/category','trading' );
 
 				endwhile;
 
