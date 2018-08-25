@@ -1,8 +1,8 @@
         
         
         
-
-                <footer class="footer">
+</div>
+                <footer class="footer container-fluid">
                         <div class="footer-menu">
                                 <div class="row p-5 justify-contents-center align-items-center" >
 
@@ -55,6 +55,6 @@
                         
                 </footer>
                 <?php wp_footer()?>
-                                </div>
+                                
         </body>
 </html>    

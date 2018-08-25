@@ -101,7 +101,7 @@ function single_ileys_post_data(){
                 if($i > 1): $output .=$separator; endif;
                 foreach($categories as $category):
                     $output .='<a href="'.esc_url(get_category_link($category->term_id)).'" alt="'.esc_attr('View all posts in %s',$category->name).'">'
-                    .esc_html($category->name).'</a>';
+                    .esc_html($category->name). '</a>';
                     $i++;
                 endforeach;
             endif;
@@ -124,13 +124,27 @@ function single_ileys_post_data(){
  
 if(!function_exists('get_thumbnail_default')):
 
-    function get_thumbnail_default(){
-        $id = get_the_ID();
-        if(has_post_thumbnail()):
-            return get_the_post_thumbnail_url($id,'large');
+    function get_thumbnail_default($num = 1){
+        $output = '';
+        if(has_post_thumbnail() && $num == 1):
+            $output = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
         else:
-            return get_template_directory().'/imgs/default.png';
+            $attachments = get_posts(array(
+                'post_type'=>'attachment',
+                'posts_per_page'=>$num,
+                'post_parent'=>get_the_ID()
+            ));
+            if($attachments && $num ==1):
+                foreach($attachments as $attachment):
+                    $output = wp_get_attachment_url($attachment->ID);
+                endforeach;
+            
+            elseif ($attachments && $num > 1):
+                    $output = $attachments;
+            endif;
+            wp_reset_postdata();
         endif;
+        return $output;
     }
 endif;
 

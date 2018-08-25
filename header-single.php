@@ -51,4 +51,3 @@ Header to display on all pages except front page
             </div><!--.col-12-->
 
         </div><!--.row-->
-    </div><!--.container-fluid -->

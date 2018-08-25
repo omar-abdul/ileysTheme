@@ -352,6 +352,14 @@ Navigation styles
     margin-bottom:3em;
 
 }
+.bg-image {
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+
+}
 
 .navbar-ileys  {
     position: absolute;
@@ -906,4 +914,18 @@ a img.aligncenter {
     .promotion{
         background-attachment: fixed;
     }
+}
+
+.ileys-gallery-format .standard-featured {
+  height:420px;  
+}
+.bg-image{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav-container{
+    position: relative;
+    height: auto;
+    width: 100%;
 }
