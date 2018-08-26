@@ -14,6 +14,9 @@
 
 
         <div class="col-lg">
+            <div class="peek-content">
+
+            
 
             <div class="excerpt">
                 <p> 
@@ -28,7 +31,7 @@
                 </p>
             <a href="<?php echo esc_url(get_theme_mod('ileys_trading_btn_url'));?>" class="btn btn-info btn-lg"><?php esc_html_e('Read More','btn_text_domain') ?></a>
             </div><!--excerpt -->
-
+            </div>
 
         </div><!--col-sm-6 -->
 

@@ -25,7 +25,7 @@
                                 $tw = 'https://twitter.com/'.esc_attr(get_option('option_tw'));
                                 
                                 ?>
-                        <div class="row mx-0 align-items-center">
+                        <div class="row mx-0 align-items-center text-center">
                                 <div class="col">
                                         <div class="social-media">
                                                 <span>

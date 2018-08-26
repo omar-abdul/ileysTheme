@@ -26,6 +26,13 @@
     //         backdrop:false
     //     });
     // })
+    function getSectionHeight(section){
+        if($(section).length){
+            return $(section).offset().top+ $(section).outerHeight();
+        }
+        return null;
+       
+    }
 
     $(window).scroll(function(){
 
@@ -33,15 +40,21 @@
         var about = $('#about').height();
         (window.scrollY >= about-100)? addWhite():addTransparent()  ;
 
-        if(window.scrollY >=about){
-            $('.section-image').animate({
+    var windowBottom = $(window).scrollTop()+$(window).height();
+    var aboutSection = getSectionHeight('.about');
+    var productSection = getSectionHeight('.products');
+    var tradingSection = getSectionHeight('.trading');
+    // var partnerSection = getSectionHeight('.partner');
+
+        if(aboutSection && windowBottom >= aboutSection){
+            $('#about .section-image').animate({
                 
                 opacity:'1',
                 left:'0'
                
 
             },1000)
-            $('.peek-content').animate({
+            $('#about .peek-content').animate({
                 
                 opacity:'1',
                 right:'0'
@@ -49,17 +62,39 @@
 
             },1000)
         }
-        if(window.scrollY >=$('.products').height()){
-            $('.products').fadeIn('slow',function(){
+        if(productSection && windowBottom >= productSection-150){
+            $('.products').animate({
+                opacity:'1',
+            },800,function(){
                 $('.main-content').animate({
                 
                     opacity:'1',
                     bottom:'0'
                    
     
-                },1000)
+                },800)
             });
 
+        }
+        if(tradingSection && windowBottom >= tradingSection){
+            $('.trading').animate({
+                opacity:'1'
+            },800,function(){
+                $('.trading .section-image').animate({
+                
+                    opacity:'1',
+                    right:'0'
+                   
+    
+                },800)
+                $('.trading .peek-content').animate({
+                    
+                    opacity:'1',
+                    left:'0'
+                   
+    
+                },800)
+            })
         }
 
     });
@@ -93,11 +128,14 @@
          
          var ajaxurl = $(this).data('url');
          var newpage = page +1;
+
+         var category = $(this).data('category');
          $.ajax({
              url :ajaxurl,
              type:'post',
              data:{
                  page:page,
+                 category:category,
                  action:'ileys_load_more'
              },
              error:function(res){
@@ -105,7 +143,7 @@
              },
              success:function(res){
                  that.data('page',newpage);
-                $('.post-container').append(res);
+                $('.ileys-post-container').append(res);
              }
          })
     });

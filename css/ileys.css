@@ -70,6 +70,9 @@
    
 
 }
+body{
+    background: #fafafa;
+}
 
 
 a:hover {
@@ -551,22 +554,25 @@ header .site-nav:after {
   }
   .section-image{
     position: relative;
-    left:-600px;
-    
     opacity:0;
 
   }
   .peek-content{
       position: relative;
-      right:-600px;
       opacity: 0;
   }
-
+  #about .section-image, .trading .peek-content{
+    left: -600px;
+  }
+  #trading .section-image,  #about .peek-content{
+    right: -600px;
+  }
+  
   .products {
       background :#e2edff;
-      padding: 2em;
+      padding: 3em;
       position:relative;
-      display: none;
+      opacity:0;
 
   }
   .main-content{
@@ -596,6 +602,7 @@ header .site-nav:after {
     color:#fff;
     position: relative;
     padding:3em;
+    opacity:0;
 }
 .btn-trade {
     background: #7ec4f7;
@@ -823,14 +830,22 @@ article .page-container{
 .cat-content {
     line-height: 1.7em;
 }
+.brand{
+    
+}
 
-.card {
-   
+
+.brand .card-box {
+    border:1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    background-color:#e2edff;
+
 }
-article.category-brands{
-    display: inline-block;
-    vertical-align: top;
+
+.card-box-footer btn {
+    width:100%;
 }
+
 
 /*
 
@@ -964,5 +979,6 @@ a img.aligncenter {
     background-size: cover;
 }
 .ileys-gallery-format .standard-featured {
-    height:350px;
+    height:300px;
 }
+

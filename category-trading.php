@@ -1,13 +1,4 @@
 <?php 
-
-/*
-######
-
-Custom Category page to display The Brand Category
-#####
-*/
-?>
-<?php 
 	if (!is_home() && is_front_page()){
 		get_header();
 	} 
@@ -20,10 +11,8 @@ Custom Category page to display The Brand Category
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="container-fluid ileys-post-container">
+			<div class="container ileys-post-container">
 
-				<div class="row align-items-center justify-content-start">
-					<div class="col-12 col-md-8   offset-md-2   my-3 cat-content">
 
 			<?php
 			if ( have_posts() ) :
@@ -36,23 +25,25 @@ Custom Category page to display The Brand Category
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'categories/category','brand' );
+					get_template_part( 'template-parts/content', 'gallery' );
 
 				endwhile;
+
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
 
 			endif;
 			?>
 			</div>
 			<div class="container text-center">
-				<a class="btn  btn-default ileys-load-more" data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1" data-category='brands'><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
+				<a class="btn  btn-default ileys-load-more" data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1" data-category='trading'><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
 			</div>
-		</div>
-		</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-</div><!-- .wrap -->
+
 
 <?php get_footer();?>
-
