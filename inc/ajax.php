@@ -8,12 +8,13 @@ add_action('wp_ajax_ileys_load_more','ileys_load_more');
 
 function ileys_load_more(){
     $paged = $_POST['page']+1;
+    
     $query = new WP_Query(array(
-        'post_type'=>'posts',
+        'post_type'=>'post',
         'paged'=>$paged
     ));
     if ( $query->have_posts() ) :
-
+            
         /* Start the Loop */
         while ( $query->have_posts() ) : $query->the_post();
 

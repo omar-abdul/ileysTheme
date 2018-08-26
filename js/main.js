@@ -54,8 +54,13 @@
 
 
     $(document).on('click','.ileys-load-more',function(){
+        var that = $(this);
          var page = $(this).data('page');
+         var newpage = page+1;
+
+         
          var ajaxurl = $(this).data('url');
+         console.log('jj');
          $.ajax({
              url :ajaxurl,
              type:'post',
@@ -67,7 +72,8 @@
                 console.log(res);
              },
              success:function(res){
-                $('.post-container').append(res);
+                 that.data('page',page) 
+                $('.ileys-post-container').append(res);
              }
          })
     });

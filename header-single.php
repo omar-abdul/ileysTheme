@@ -21,7 +21,7 @@ Header to display on all pages except front page
 </head>
 <body <?php body_class();?>>
 
-    <div class="container-fluid">
+    <div class="container-fluid post-container">
 
         <div class="row">
             <div class="col-12">

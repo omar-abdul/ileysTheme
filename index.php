@@ -11,7 +11,7 @@
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="container post-container">
+			<div class="container ileys-post-container">
 
 
 			<?php
@@ -36,12 +36,10 @@
 
 			endif;
 			?>
-			
-			<!-- <div class="container text-center">
-			 # echo admin_url('admin-ajax.php')?>
-			 ##echo  __(' Load More')
-				<a class="btn btn-lg btn-default ileys-load-more" data-url = "" data-page="1"><span class="icon-spinner"></span></a>
-			</div> -->
+			</div>
+			<div class="container text-center">
+				<a class="btn btn-lg btn-default ileys-load-more"  data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1"><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
+			</div>
 		</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
