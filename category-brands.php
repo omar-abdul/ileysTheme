@@ -22,7 +22,7 @@ Custom Category page to display The Brand Category
 		<main id="main" class="site-main" role="main">
 			<div class="container">
 
-				<div class="row align-items-center justify-content-center">
+				<div class="row align-items-center justify-content-start">
 					<div class="col-12 col-md-8   offset-md-2   my-3 cat-content">
 
 			<?php

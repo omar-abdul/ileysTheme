@@ -47,13 +47,13 @@ class Walker_Nav_Primary extends Walker_Nav_menu {
            $attributes .= !empty($item->url)? 'href="'. esc_attr($item->url).'"':'';
 
 
-           $attributes .= ($args->walker->has_children)? ' class="submenu-toggle"':' class=""';
+           $attributes .= ($args->walker->has_children)? ' class="submenu-toggle dropdown-toggle"':' class=""';
 
 
            $item_output = $args->before;
            $item_output .= '<a '.$attributes.'>';
            $item_output .=$args->link_before . apply_filters('the_title', $item->title , $item->ID). $args->link_after;
-           $item_output .= ($depth == 0 && $args->walker->has_children) ? '<span class="caret"></span></a>':'</a>';
+           $item_output .= ($depth == 0 && $args->walker->has_children) ? '<span class="c"></span></a>':'</a>';
 
            $item_output .= $args->after;
 

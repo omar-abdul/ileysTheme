@@ -1,7 +1,7 @@
 <?php if(get_theme_mod('ileys_dropdownpages')!=0):?>
 <section class="about" id="about">
 
-    <div class="container"> 
+    <div class="container about-container"> 
 
         <div class="row align-items-center">
 
@@ -10,6 +10,7 @@
                 <div class="section-image"><?php echo get_the_post_thumbnail($page->ID, array(555,355) );?></div>
             </div>
             <div class="col-lg">
+                <div class="peek-content">
                 <div class="title">
                     <h4><?php echo $page->post_title;  ?> </h4>
                 </div><!--title -->
@@ -26,7 +27,7 @@
                     </p>
                 <a href="<?php echo esc_url(get_permalink($page->ID));?>" class="btn btn-danger"><?php esc_html_e('Read More','btn_text_domain') ?></a>
                 </div><!--excerpt -->
-
+            </div>
 
             </div><!--col-sm-6 -->
 

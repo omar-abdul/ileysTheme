@@ -33,7 +33,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
 
 
     <header class="p-3 px-md-4 mb-3  main-page  fixed-top" id="front-header">
-      <h5 class="float-left  font-weight-normal">Ileys Enterprises</h5>
+      <img src="<?php echo get_theme_mod('ileys_logo')?>" class="img-responsive " style="width:120px">
       <nav class="site-nav">
 
         <?php wp_nav_menu(array(

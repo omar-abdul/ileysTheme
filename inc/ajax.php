@@ -9,8 +9,9 @@ add_action('wp_ajax_ileys_load_more','ileys_load_more');
 function ileys_load_more(){
     $paged = $_POST['page']+1;
     $query = new WP_Query(array(
-        'post_type'=>'posts',
-        'paged'=>$paged
+        'post_type'=>'post',
+        'paged'=>$paged,
+        'category__not_in'=>get_theme_mod('ileys_category_setting',0)
     ));
     if ( $query->have_posts() ) :
 
