@@ -2,49 +2,55 @@
 
 /*
 
-Generic template Standard Post Format
+Generic template Gallery Post Format
 
 */?>
 
 <article id ="post-<?php the_ID(); ?>" <?php post_class('ileys-gallery-format');?>>
 <div class="container">
-<div class="card text-center">
-
-    <header>
-            <?php
-                if(get_thumbnail_default()):
+<div class="card ">
+        <header>
+                <?php  if(get_thumbnail_default()):
                     $attachments = get_thumbnail_default(5);
-            ?>
-            <div id='post-gallery-<?php the_ID()?>' class='carousel slide' data-ride='carousel'>
-                    <div class='carousel-inner' role='listbox'>
-                        <?php
-                            $i = 0;
+                    ?>
+
+                   <div  id = 'post-gallery-<?php the_ID();?>' class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <?php 
+                                $i = 0;
                             foreach($attachments as $attachment):
-                                $active = ($i== 0?'active':'');
+                                 $active = ($i==0 ?'active':'');
+                            ?>
+                                <div class='carousel-item <?php echo $active;?> bg-image standard-featured' style='background-image:url(<?php echo wp_get_attachment_url($attachment->ID);?>)'>
 
-                        ?>
-                        <div class='carousel-item <?php echo $active?> bg-image standard-featured' style='background-image:url(<?php echo wp_get_attachment_url($attachment->ID);?>)'></div>
-                        <?php $i++; endforeach;?>
-
-                    </div>
-                    <a class="carousel-control-prev" href="#post-gallery-<?php the_ID()?>" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#post-gallery-<?php the_ID()?>" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-            </div>
-        <?php endif;?>
-    </header>
+                                </div>
+                            <?php $i++; endforeach; ?>
+                        </div>
+                   </div> 
+                <?php endif; ?>
+            
+         </header>
   <div class="card-body">
-    <header>
-        <a href="<?php the_permalink();?>"><?php the_title('<h3 class="card-title">','</h3>');?></a>
-    </header>
-    <p class="card-text"> <?php the_excerpt();?></p>
+    
+       <?php the_title('<h3 class="card-title text-center">','</h3>');?>
+   
+    <div class="card-text-wrapper ">
+    
+        <?php 
+            $content = get_the_content();
+            $content = preg_replace("/<img[^>]+\>/i"," ", $content);
+            $content = apply_filters("the_content",$content);
+            $content = str_replace (']]>',']]>', $content);
+            echo $content;
+        ?>
+    
   </div>
-  <div class="card-footer text-muted">
+  </div>
+  <div class='w-100'>
+    <?php $page= get_page_by_title('Get free quote'); ?>
+      <a class="btn  btn-lg btn-info w-100" href="<?php echo esc_url(get_page_link($page->ID)) ;?>"><?php echo __('Get Quote'); ?>
+
+    </a>
   </div>
 </div>
 </div>

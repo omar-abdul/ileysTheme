@@ -32,14 +32,14 @@ if($cat !==0):
             <?php foreach ($posts as $post):?>
 
            
-                <div class="col-md"> 
+                <div class="col"> 
                 <a href="<?php echo get_the_post_thumbnail_url($post->ID,'full')?>" data-toggle="lightbox"  data-max-width='600' data-gallery="example-gallery"> <?php 
                 $arr = array(
                     'id'=>'img_'.$post->ID,
                     'class'=>' img-responsive img-thumbnail'
                 ) ;
                 
-                echo get_the_post_thumbnail($post->ID ,$arr);
+                echo get_the_post_thumbnail($post->ID ,'medium',$arr);
                 
                 ?></a>
                 

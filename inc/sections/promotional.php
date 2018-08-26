@@ -5,8 +5,8 @@ if(!empty(get_theme_mod('ileys_promotion_bg'))):
 
 <div class="container-fluid">
 
-        <section class="promotion" style='background-image:url("<?php echo esc_url(get_theme_mod('ileys_promotion_bg'));?>")'>
-
+        <section class="promotion" style='background-image:url("<?php echo esc_url(get_theme_mod('ileys_promotion_bg'));?>")' >
+        
 
 
             <div class="container">

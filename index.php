@@ -37,10 +37,13 @@
 			endif;
 			?>
 			</div>
-			<div class="container text-center">
-				<a class="btn btn-lg btn-default ileys-load-more"  data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1"><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
-			</div>
-		</div>
+			<!-- <div class="container text-center">
+				<a class="btn  btn-default ileys-load-more" data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1"><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
+			</div> -->
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+
+
 <?php get_footer();?>

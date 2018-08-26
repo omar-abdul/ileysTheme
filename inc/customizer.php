@@ -135,6 +135,28 @@ function ileys_customize_register($wp_customize){
             )
         );
 
+        $wp_customize->add_setting('ileys_trading_btn_url',
+        array(
+            'default'=>'#',
+            'transport' =>'refresh',
+            'type'=>'theme_mod',
+            'sanitize_callback'=>'esc_url'
+            )
+        
+        );
+
+        $wp_customize->add_control('ileys_trading_btn_url',
+        array(
+            'label'=>__('Button url target'),
+            'description'=>esc_html__(' '),
+            'section'=>'ileys_trading_section',
+            'type'=>'url',
+            'input_attrs'=>array(
+                'placeholder'=>__('Enter url to go to ')
+            )
+         )
+            );
+
         $wp_customize->add_section('ileys_promotion_section',
         
         array(
@@ -171,6 +193,43 @@ function ileys_customize_register($wp_customize){
            )
         )
      ) );
+
+     $wp_customize->add_section('ileys_logo_section',
+        
+     array(
+         'title'=>__('Site settings '),
+         'description'=> __('Edit Promotion section'),
+         'panel'=>'ileys_section_panel'
+     )
+ );
+
+     $wp_customize->add_setting( 'ileys_logo',
+     array(
+         'default' => '',
+         'transport' => 'refresh',
+         'sanitize_callback' => 'my_sanitize_image',
+         'type' => 'theme_mod',
+         'capability' => 'edit_theme_options'
+     )
+     );
+     
+     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ileys_logo',
+     array(
+        'label' => __( 'Select logo image ' ),
+        'description' => esc_html__( 'Choose mage to set as logo' ),
+        'section' => 'ileys_logo_section',
+
+        'button_labels' => array( // Optional.
+           'select' => __( 'Select Image' ),
+           'change' => __( 'Change Image' ),
+           'remove' => __( 'Remove' ),
+           'default' => __( 'Default' ),
+           'placeholder' => __( 'No image selected' ),
+           'frame_title' => __( 'Select Image' ),
+           'frame_button' => __( 'Choose Image' ),
+        )
+     )
+  ) );
 
      $wp_customize->add_setting( 'promotion_section_text',
      array(

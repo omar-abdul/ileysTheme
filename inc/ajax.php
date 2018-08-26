@@ -11,7 +11,8 @@ function ileys_load_more(){
     
     $query = new WP_Query(array(
         'post_type'=>'post',
-        'paged'=>$paged
+        'paged'=>$paged,
+        'category__not_in'=>get_theme_mod('ileys_category_setting',0)
     ));
     if ( $query->have_posts() ) :
             

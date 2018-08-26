@@ -1,10 +1,10 @@
         
         
-        
+
 </div>
-                <footer class="footer container-fluid">
-                        <div class="footer-menu">
-                                <div class="row p-5 justify-contents-center align-items-center" >
+                <footer class="footer container-fluid ">
+                        <div class="footer-menu ">
+                                <div class="row  p-5  justify-contents-center align-items-center" >
 
                                         <?php wp_nav_menu(array(
                                         'theme_location'=>'secondary', 
@@ -25,7 +25,7 @@
                                 $tw = 'https://twitter.com/'.esc_attr(get_option('option_tw'));
                                 
                                 ?>
-                        <div class="row align-items-center">
+                        <div class="row mx-0 align-items-center">
                                 <div class="col">
                                         <div class="social-media">
                                                 <span>
@@ -55,6 +55,6 @@
                         
                 </footer>
                 <?php wp_footer()?>
-                                
+                 
         </body>
 </html>    
