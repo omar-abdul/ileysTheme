@@ -27,12 +27,12 @@ $slide3 = esc_attr(get_option('slider_image_3'));
     <?php wp_head();?>
 </head>
 <body <?php body_class();?>>
-<div class="container-fluid">
+<div class="container-fluid front-page-container">
 
 
 
 
-    <header class="p-3 px-md-4 mb-3  main-page  fixed-top" id="front-header">
+    <header class="p-3 px-md-4 mb-3  main-page  bg-nav fixed-top" id="front-header">
       <img src="<?php echo get_theme_mod('ileys_logo')?>" class="img-responsive " style="width:120px">
       <nav class="site-nav">
 
@@ -63,7 +63,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('<?php print $slide2 ;?>')">
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption p-3 d-none d-md-block">
             <h3><?php print esc_attr(get_option('slider_text_2'));?></h3>
             </div>
           </div>

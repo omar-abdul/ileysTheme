@@ -65,7 +65,7 @@
         if(productSection && windowBottom >= productSection-150){
             $('.products').animate({
                 opacity:'1',
-            },800,function(){
+            },400,function(){
                 $('.main-content').animate({
                 
                     opacity:'1',
@@ -151,8 +151,8 @@
 
 
     function addWhite(){
-        if($('#front-header').hasClass('bg-transparent')){
-            $('#front-header').removeClass('bg-transparent');
+        if($('#front-header').hasClass('bg-nav')){
+            $('#front-header').removeClass('bg-nav');
         }
         $('#front-header').addClass('bg-white');
     }
@@ -160,7 +160,7 @@
         if($('#front-header').hasClass('bg-white')){
             $('#front-header').removeClass('bg-white');
         }
-        $('#front-header').addClass('bg-transparent');
+        $('#front-header').addClass('bg-nav');
     }
 
 })(jQuery)

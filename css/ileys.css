@@ -209,6 +209,9 @@ Navigation styles
 .bg-white{
     box-shadow: 0 .2em 2px rgba(0, 0, 0, .3);
 }
+.bg-nav{
+    background-color: rgba(0, 0, 0, .3)
+}
 
 
 
@@ -506,7 +509,7 @@ header .site-nav:after {
 .slider-container {
     padding:0px;
 }
-#carouselExampleIndicators .carousel-item::before{
+/* #carouselExampleIndicators .carousel-item::before{
   display: block;
   position: relative;
   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6));
@@ -519,8 +522,14 @@ header .site-nav:after {
   top: 0;
   left: 0;
 
-}
+} */
+ .carousel-caption{
+    background:rgba(0, 0, 0, .3);
 
+    margin-left:1em;
+    margin-bottom:3em;
+
+}
 
   .carousel-caption{
       top:50%;
@@ -639,10 +648,6 @@ header .site-nav:after {
      background-position:center; 
      background-size:cover;
   }
- .container-fluid{
-     padding: 0;
-     margin:0;
- }
  section .promotion {
      margin-top:0;
  }
@@ -684,6 +689,7 @@ header .site-nav:after {
     border-top:2px solid #fff;
     height: auto;
     overflow: hidden;
+    padding:0;
 
 
 }
@@ -969,9 +975,7 @@ a img.aligncenter {
     }
 }
 
-.post-container{
-    overflow: hidden;
-}
+
 
 .bg-image {
     background-repeat: no-repeat;
@@ -982,3 +986,8 @@ a img.aligncenter {
     height:300px;
 }
 
+.front-page-container {
+    padding:0;
+    margin:0;
+    overflow: hidden;
+}

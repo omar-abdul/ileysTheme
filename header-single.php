@@ -28,7 +28,7 @@ Header to display on all pages except front page
                 <header class="header-container  text-center" style="background-image:url(<?php header_image(); ?>);">
                     
                     <div class="header-content">
-                        <h3><span class="d-none"><?php echo bloginfo('name')?></span></h3>
+                        <span class="d-none"><h3><?php echo bloginfo('name')?></h3></span>
                     </div><!--header-content-->
                    
                         <nav class="navbar navbar-expand-lg navbar-light bg-ultra-light navbar-ileys ">
