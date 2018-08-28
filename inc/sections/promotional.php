@@ -3,7 +3,7 @@
 if(!empty(get_theme_mod('ileys_promotion_bg'))):
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
 
         <section class="promotion" style='background-image:url("<?php echo esc_url(get_theme_mod('ileys_promotion_bg'));?>")' >
         

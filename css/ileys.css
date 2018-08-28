@@ -363,7 +363,6 @@ Navigation styles
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 300px;
 
 }
 
@@ -524,18 +523,45 @@ header .site-nav:after {
 
 } */
  .carousel-caption{
-    background:rgba(0, 0, 0, .3);
 
-    margin-left:1em;
+    margin-left:3em;
     margin-bottom:3em;
+    height:300px;
 
 }
+.carousel-caption-container{
+    display: table;
+}
+.caption-cell{
+    display:table-cell;
+    vertical-align: middle;
+}
+.carousel-caption .heading{
+    background: rgba(0, 0, 0, .4);
+    height:70%;
+    
+}
+.carousel-caption .subtext{
+    background: rgba(0, 0, 0, .3);
+    height:30%;
+    text-align:center;
+    margin-left:1em;
+    word-wrap: break-word;
+}
+
 
   .carousel-caption{
-      top:50%;
+      top:100%;
       right:70%;
       left:0;
       bottom:0;
+      opacity:0;
+      transition: all .3s;
+      transition-delay: .3s;
+  }
+  .active .carousel-caption{
+      opacity:1;
+      top:50%;
   }
   section .title {
       font-family:'Comfortaa', cursive;
@@ -607,8 +633,8 @@ header .site-nav:after {
   }
 .trading {
 
-    background: #f25e5e;
-    color:#fff;
+    background: #fafafa;
+    
     position: relative;
     padding:3em;
     opacity:0;
@@ -632,7 +658,7 @@ header .site-nav:after {
     top: -35px;
     width: 100%;
     height: 60px;
-    background: #f25e5e;
+    background: #fafafa;
     -webkit-transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
     -ms-transform: skewY(-2deg);
@@ -642,12 +668,10 @@ header .site-nav:after {
 
   }
 
-  .trade-img{
-    height:300px; width:300px;
-     border-radius:50%;
-     background-position:center; 
-     background-size:cover;
+  .img-wrap{
+      position:relative;
   }
+
  section .promotion {
      margin-top:0;
  }
@@ -673,7 +697,24 @@ header .site-nav:after {
 
 
 .partner {
-    padding:20px;
+    padding:40px;
+    position: relative;
+    background: #e2edff;
+}
+.partner:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -36px;
+    width: 100%;
+    height: 60px;
+    background: #e2edff;
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+    -webkit-backface-visibility: hidden;
 }
 
 .col-12{
@@ -836,21 +877,9 @@ article .page-container{
 .cat-content {
     line-height: 1.7em;
 }
-.brand{
-    
-}
 
 
-.brand .card-box {
-    border:1px solid rgba(0, 0, 0, .2);
-    border-radius: 4px;
-    background-color:#e2edff;
 
-}
-
-.card-box-footer btn {
-    width:100%;
-}
 
 
 /*
@@ -990,4 +1019,109 @@ a img.aligncenter {
     padding:0;
     margin:0;
     overflow: hidden;
+}
+
+@media  only screen and (min-width:768px){
+    .img-wrap{
+        position: relative;
+    }
+    .img-caption{
+        background: rgba(0, 0, 0, .5);
+        padding:.25em;
+        position: absolute;
+        top:100%;
+        width:200px;
+        left:0;
+        opacity: 0;
+        transition: all .3s;
+        color:#fff;
+        text-align: center;
+    }
+    .img-wrap:hover .img-caption{
+        top:76%;
+        opacity: 1;   
+    }
+
+}
+
+
+
+
+/*PEN STYLES*/
+.card-box {
+  transition: height 0.3s ease;
+  -webkit-transition: height 0.3s ease;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-size: 14px;
+  line-height: 1.45em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card-box .photo {
+  height: 200px;
+  position: relative;
+}
+
+.card-box .description {
+  padding:10px 10px 0 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.card-box .description h1 {
+  line-height: 1em;
+  margin: 0 0 10px 0;
+}
+.card-box .description h2 {
+  color: #9b9b9b;
+
+  line-height: 1.2em;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 1.2% 0;
+}
+
+
+@media screen and (min-width: 600px) {
+  .card-box {
+    height: 200px;
+    max-width: 100%;
+  }
+
+  .card-box .photo {
+    float: right;
+    background-color: #fff;
+  }
+  .card-box .photo {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    float: left;
+    height: 100%;
+    width: 40%;
+  }
+
+  .card-box .description {
+    float: left;
+    width: 60%;
+    z-index: 0;
+  }
+  .card-box .description:before {
+    /* -webkit-transform: skewX(-5deg);
+            transform: skewX(-5deg); */
+
+  }
+}
+.bg-image-contain{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.ileys-post-container .pages{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

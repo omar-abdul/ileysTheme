@@ -7,7 +7,7 @@ Front page section of the website
 */
 ?>
 <?php  get_header();
-$ileys_theme_sections = array(  'about', 'product', 'trading', 'promotional', 'partners' );    
+$ileys_theme_sections = array(  'about', 'product', 'trading', 'partners','promotional',  );    
 
 if(!is_home() && is_front_page()){
 

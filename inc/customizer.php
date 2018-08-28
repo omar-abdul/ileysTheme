@@ -114,7 +114,7 @@ function ileys_customize_register($wp_customize){
         )
     );
 
-        $wp_customize->add_setting( 'ileys_trading_dropdownpages',
+        $wp_customize->add_setting( 'ileys_trading_dropdowncat',
         array(
             'default' => '',
             'transport' => 'refresh',
@@ -123,17 +123,16 @@ function ileys_customize_register($wp_customize){
         )
         );
         
-        $wp_customize->add_control( 'ileys_trading_control_dropdownpages',
+        $wp_customize->add_control(new My_Dropdown_Category_Control($wp_customize,'ileys_trading_dropdowncat',
+        
         array(
-            'label' => __( 'Trading Section' ),
-            'description' => esc_attr( 'The featured image will show alongside the excerpt ' ),
-            'section' => 'ileys_trading_section',
-            'settings'=>'ileys_trading_dropdownpages',
-            'priority' => 10, // Optional. Order priority to load the control. Default: 10
-            'type' => 'dropdown-pages',
-            'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
-            )
-        );
+           'label'=>__('Category to chose posts from'),
+           'description'=>esc_html__('Optionally enter cateogry to choose posts from '),
+           'section'=>'ileys_trading_section',
+            
+        )    
+    )
+);
 
         $wp_customize->add_setting('ileys_trading_btn_url',
         array(

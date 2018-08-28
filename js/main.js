@@ -18,14 +18,7 @@
 
         $(this).siblings('.submenu .submenu-dropdown').toggleClass('submenu-dropdown-active',200)
     })
-    // $(".lightbox-link").click(function(e){
 
-    //     $('.lightbox-content img').attr('src',e.target.src);
-    //     $('#myLightbox').lightbox({
-    //         show:true,
-    //         backdrop:false
-    //     });
-    // })
     function getSectionHeight(section){
         if($(section).length){
             return $(section).offset().top+ $(section).outerHeight();
@@ -38,7 +31,7 @@
 
 
         var about = $('#about').height();
-        (window.scrollY >= about-100)? addWhite():addTransparent()  ;
+
 
     var windowBottom = $(window).scrollTop()+$(window).height();
     var aboutSection = getSectionHeight('.about');
@@ -99,26 +92,6 @@
 
     });
     
-    $('#front-header').hover(function(){
-
-
-        isthere= $('#front-header').hasClass('bg-white');
-        if(isthere){
-            
-            return;
-        }
-        else{
-            addWhite();
-        }
-
-    }, function(){
-        var about = $('#about').height();
-        if(window.scrollY >=about-100 ){
-            return;
-        }
-        addTransparent();
-    });
-
 
     $(document).on('click','.ileys-load-more',function(){
         var that = $(this);
@@ -148,8 +121,26 @@
          })
     });
 
-
-
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:4,
+                nav:true,
+                loop:false
+            }
+        }
+    })
     function addWhite(){
         if($('#front-header').hasClass('bg-nav')){
             $('#front-header').removeClass('bg-nav');

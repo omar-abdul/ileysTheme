@@ -13,7 +13,7 @@ if($cat !==0):
 ?>
 <section class="products">
 
-    <div class="main-content">
+    <div class="main-content p-5">
         <div class="title text-center">
             
             <h3><?php echo __('Brands', 'ileys')?></h3>
@@ -28,22 +28,24 @@ if($cat !==0):
         <div class="container"> 
 
 
-            <div class="row align-items-center text-center">
+            <div class="owl-carousel owl-theme">
             <?php foreach ($posts as $post):?>
 
            
-                <div class="col"> 
-                <a href="<?php echo get_the_post_thumbnail_url($post->ID,'full')?>" data-toggle="lightbox"  data-max-width='600' data-gallery="example-gallery"> <?php 
-                $arr = array(
-                    'id'=>'img_'.$post->ID,
-                    'class'=>' img-responsive img-thumbnail'
-                ) ;
+                <div class="item">
+                    <a href="<?php echo get_the_post_thumbnail_url($post->ID,'full')?>" data-toggle="lightbox"  data-max-width='600' data-gallery="example-gallery"> <?php 
+                    $arr = array(
+                        'id'=>'img_'.$post->ID,
+                        'class'=>' img-fluid img-thumbnail '
+                    ) ;
+                    
+                    echo get_the_post_thumbnail($post->ID ,array(200,200),$arr);
+                    
+                    ?></a>                
+                </div>
+
                 
-                echo get_the_post_thumbnail($post->ID ,'medium',$arr);
-                
-                ?></a>
-                
-                </div><!--col-md-->
+               
                 <?php endforeach;?>
                 <?php wp_reset_postdata();?>
 

@@ -32,7 +32,7 @@ $slide3 = esc_attr(get_option('slider_image_3'));
 
 
 
-    <header class="p-3 px-md-4 mb-3  main-page  bg-nav fixed-top" id="front-header">
+    <header class="p-3 px-md-4 mb-3  main-page  bg-white fixed-top" id="front-header">
       <img src="<?php echo get_theme_mod('ileys_logo')?>" class="img-responsive " style="width:120px">
       <nav class="site-nav">
 
@@ -58,20 +58,54 @@ $slide3 = esc_attr(get_option('slider_image_3'));
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active" style="background-image: url('<?php print $slide1 ;?>')">
             <div class="carousel-caption d-none d-md-block">
-              <h3><?php print esc_attr(get_option('slider_text_1'));?></h3>
+                  <div class="carousel-caption-container">
+                    <div class="caption-cell">
+                      <div class="text-center">
+                      <?php if(esc_attr(get_option('slider_text_1'))!=''):?>
+                        <h3 class="heading p-5"><?php print esc_attr(get_option('slider_text_1'));?> </h3>
+                        <?php endif;?>
+                        <?php if(esc_attr(get_option('slider_sub_text_1'))!=''):?>
+                        <h4 class="subtext p-3"><?php print esc_attr(get_option('slider_sub_text_1'));?></h4>
+                        <?php endif;?>
+                      </div>
+                    </div>
+                  </div>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('<?php print $slide2 ;?>')">
             <div class="carousel-caption p-3 d-none d-md-block">
-            <h3><?php print esc_attr(get_option('slider_text_2'));?></h3>
-            </div>
+            <div class="carousel-caption-container">
+                   
+                    <div class="caption-cell">
+                      <div class="text-center">
+                        <?php if(esc_attr(get_option('slider_text_2'))!=''):?>
+                        <h3 class="heading p-5"><?php print esc_attr(get_option('slider_text_2'));?> </h3>
+                        <?php endif;?>
+                        <?php if(esc_attr(get_option('slider_sub_text_2'))!=''):?>
+                        <h4 class="subtext p-3"><?php print esc_attr(get_option('slider_sub_text_2'));?></h4>
+                        <?php endif;?>
+                      </div>
+                    </div>
+                  </div>       
+              </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item" style="background-image: url('<?php print $slide3 ;?>')">
             <div class="carousel-caption d-none d-md-block">
-            <h3><?php print esc_attr(get_option('slider_text_3'));?></h3>
-            </div>
+            <div class="carousel-caption-container">
+                    <div class="caption-cell">
+                      <div class="text-center">
+                      <?php if(esc_attr(get_option('slider_text_3'))!=''):?>
+                        <h3 class="heading p-5"><?php print esc_attr(get_option('slider_text_3'));?> </h3>
+                        <?php endif;?>
+                        <?php if(esc_attr(get_option('slider_sub_text_3'))!=''):?>
+                        <h4 class="subtext p-3"><?php print esc_attr(get_option('slider_sub_text_3'));?></h4>
+                        <?php endif;?>
+                      </div>
+                    </div>
+                  </div>  
+               </div>
           </div>
         </div>
 
