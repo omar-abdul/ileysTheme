@@ -22,7 +22,7 @@ if($cat !==0):
 
 
 <?php foreach($posts as $post):?>
-        <div class=" col-12 col-md-4 img-wrap">
+        <div class=" col-12 col-md-4 img-wrap pb-3">
            
 
 

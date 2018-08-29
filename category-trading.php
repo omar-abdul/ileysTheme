@@ -37,10 +37,10 @@
 			endif;
 			?>
 			</div>
-			<div class="container text-center">
-				<a class="btn  btn-default ileys-load-more" data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1" data-category='trading'><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
-			</div>
 
+			<div class="pages mx-auto">
+				<?php the_posts_pagination();?>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

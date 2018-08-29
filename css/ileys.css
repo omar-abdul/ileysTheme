@@ -71,7 +71,7 @@
 
 }
 body{
-    background: #fafafa;
+    background: #efefef;
 }
 
 
@@ -230,6 +230,13 @@ Navigation styles
         position: relative;
         background: rgba(0, 0, 0, 0);
         float: right;
+    }
+    
+    .site-nav a {
+        color:#000;
+    }
+    .site-nav a:hover, .site-nav a:focus {
+        color:rgb(161, 210, 250);
     }
     
 
@@ -1027,7 +1034,7 @@ a img.aligncenter {
     }
     .img-caption{
         background: rgba(0, 0, 0, .5);
-        padding:.25em;
+        
         position: absolute;
         top:100%;
         width:200px;
@@ -1038,7 +1045,7 @@ a img.aligncenter {
         text-align: center;
     }
     .img-wrap:hover .img-caption{
-        top:76%;
+        top:75%;
         opacity: 1;   
     }
 
@@ -1053,7 +1060,7 @@ a img.aligncenter {
   -webkit-transition: height 0.3s ease;
   background: #fff;
   border-radius: 3px;
-  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.7);
   position: relative;
   font-size: 14px;
   line-height: 1.45em;
@@ -1088,7 +1095,7 @@ a img.aligncenter {
 
 @media screen and (min-width: 600px) {
   .card-box {
-    height: 200px;
+    height: 300px;
     max-width: 100%;
   }
 
@@ -1119,9 +1126,14 @@ a img.aligncenter {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    height:200px;
 }
 .ileys-post-container .pages{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+.pages .nav-links{
+    margin-right: auto;
+    margin-left:auto;
 }

@@ -45,7 +45,10 @@ Custom Category page to display The Brand Category
 			</div>
 			
 		</div>
-		<div class="pages"><?php the_posts_pagination("mx-auto");?></div>
+		<div class="pages mx-auto"><?php
+
+				the_posts_pagination();
+				?></div>
 		</div>
 		
 		</main><!-- #main -->

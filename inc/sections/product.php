@@ -39,9 +39,10 @@ if($cat !==0):
                         'class'=>' img-fluid img-thumbnail '
                     ) ;
                     
-                    echo get_the_post_thumbnail($post->ID ,array(200,200),$arr);
+                    ?><div class="bg-image-contain" style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID ,array(200,200)); ?>')"> 
+                    </div>
                     
-                    ?></a>                
+                    </a>                
                 </div>
 
                 

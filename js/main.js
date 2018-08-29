@@ -1,4 +1,5 @@
 (function($){
+    $('.carousel').carousel({ interval: 4000 })
 
     $(document).click(function(){
         $('.submenu-dropdown').removeClass('submenu-dropdown-active',200);
@@ -21,7 +22,7 @@
 
     function getSectionHeight(section){
         if($(section).length){
-            return $(section).offset().top+ $(section).outerHeight();
+            return $(section).offset().top+ $(section).outerHeight()-150;
         }
         return null;
        
