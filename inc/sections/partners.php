@@ -27,23 +27,25 @@ if($cat !==0):
 
         <div class="container"> 
 
-
-            <div class="row align-items-center text-center">
+            <div class="partner-carousel owl-carousel owl-theme">
             <?php foreach ($posts as $post):?>
 
            
-                <div class="col-md"> 
-              <?php 
-                $arr = array(
-                    'id'=>'img_'.$post->ID,
-                    'class'=>' img-responsive'
-                ) ;
-                
-                echo get_the_post_thumbnail($post->ID,$arr);?>
-                
+                <div class="item">
+                    <a href="<?php echo get_the_post_thumbnail_url($post->ID,'full')?>" data-toggle="lightbox"  data-max-width='600' data-gallery="example-gallery"> <?php 
+                    $arr = array(
+                        'id'=>'img_'.$post->ID,
+                        'class'=>' img-fluid img-thumbnail '
+                    ) ;
+                    
+                    ?><div class="bg-image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post->ID ,'large'); ?>') ; "> 
+                    </div>
+                    
+                    </a>                
+                </div>
 
                 
-                </div><!--col-md-->
+               
                 <?php endforeach;?>
                 <?php wp_reset_postdata();?>
 

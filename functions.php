@@ -32,6 +32,19 @@ function custom_theme_setup(){
 		'gallery',
 		'audio',
     ) );
+
+    add_post_type_support( 'page', 'excerpt' );
+
+
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
     
     
 }
@@ -41,6 +54,8 @@ add_action('after_setup_theme','custom_theme_setup');
 function customTheme_script_enqueue(){
     wp_enqueue_style('bootstrapstyle', get_template_directory_uri()."/css/bootstrap.min.css", array(), "4.1.3", "all" );
     wp_enqueue_style('lightbox', "https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css", array(), "0.6.1", "all" );
+    wp_enqueue_style('owlcarousel', get_template_directory_uri()."/css/owl.carousel.min.css", array(), "1.0.1", "all" );
+    wp_enqueue_style('owlcarouseltheme', get_template_directory_uri()."/css/owl.theme.default.min.css", array(), "2.3.4", "all" );
 
     wp_enqueue_style('fonts', "https://fonts.googleapis.com/css?family=Comfortaa:400,700|Lato", array(),'1.0.3', "all" );
     wp_enqueue_style('customstyle', get_template_directory_uri()."/css/ileys.css", array(), "1.0.1", "all" );
@@ -53,6 +68,7 @@ function customTheme_script_enqueue(){
     wp_enqueue_script('popperjs', "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",array() , "1.0.0",true);
     wp_enqueue_script('bootstrapjs',get_template_directory_uri() . "/js/bootstrap.min.js",array('jquery','popperjs') ,'4.1.3', true);
     wp_enqueue_script('lightbox', "https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js",array('jquery','bootstrapjs') ,'0.6.1', true);
+    wp_enqueue_script('owlcarousel', get_template_directory_uri() . "/js/owl.carousel.min.js",array() ,'2.3.4', true);
 
     wp_enqueue_script('mainjs',get_template_directory_uri() . "/js/main.js",array('jquery') ,'1.0.0', true);
 
@@ -99,7 +115,7 @@ function single_ileys_post_data(){
                 if($i > 1): $output .=$separator; endif;
                 foreach($categories as $category):
                     $output .='<a href="'.esc_url(get_category_link($category->term_id)).'" alt="'.esc_attr('View all posts in %s',$category->name).'">'
-                    .esc_html($category->name).'</a>';
+                    .esc_html($category->name). '</a>';
                     $i++;
                 endforeach;
             endif;
@@ -122,15 +138,52 @@ function single_ileys_post_data(){
  
 if(!function_exists('get_thumbnail_default')):
 
-    function get_thumbnail_default(){
-        $id = get_the_ID();
-        if(has_post_thumbnail()):
-            return get_the_post_thumbnail_url($id);
+    function get_thumbnail_default($num = 1){
+        $output ='';
+        if(has_post_thumbnail() && $num==1):
+           $output = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
         else:
-            return get_template_directory().'/imgs/default.png';
+            $attachments = get_posts(array(
+                'post_type'=>'attachment',
+                'posts_per_page'=> $num,
+                'post_parent'=>get_the_ID()
+            ));
+
+            if($attachments && $num ==1):
+                foreach($attachments as $attachment):
+                    $output = wp_get_attachment_url($attachment->ID);
+                endforeach;
+            elseif($attachments && $num > 1):
+                $output = $attachments;
+            endif;
+
         endif;
+        return $output;
     }
 endif;
+
+
+function register_footer_widget(){
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 2',
+        'id' => 'footer-sidebar-2',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init','register_footer_widget');
 
 require get_template_directory(). '/inc/walker.php';
 require get_template_directory(). '/inc/customizer.php';

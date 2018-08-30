@@ -25,7 +25,7 @@
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+					get_template_part( 'template-parts/content', 'gallery' );
 
 				endwhile;
 
@@ -37,10 +37,10 @@
 			endif;
 			?>
 			</div>
-			<!-- <div class="container text-center">
-				<a class="btn  btn-default ileys-load-more" data-url = "<?php  echo admin_url('admin-ajax.php')?>" data-page="1"><span class="icon-spinner"></span><?php echo  __(' Load More')?></a>
-			</div> -->
 
+			<div class="pages mx-auto">
+				<?php the_posts_pagination();?>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
