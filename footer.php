@@ -37,7 +37,7 @@
                         <div class="row    justify-content-center align-items-center  ">
 
 
-                                <div class="col-12 col-md-6 ">
+                                <div class="col-12 col-md-4 ">
                                         <?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
                                         <div id="footer-sidebar2" class="footer-widget widget-area" role="complementary">
                                         <?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
@@ -45,7 +45,7 @@
                                         <?php endif; ?>
 
                                 </div>
-
+                                <div class="col-12 col-md-2"></div>
 
                                 <div class="col-12 col-md-6 mt-2">
                                 <h5> <?php echo __('Have an inquiry, send us an email')?> </h5>

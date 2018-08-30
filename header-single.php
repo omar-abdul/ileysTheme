@@ -21,10 +21,10 @@ Header to display on all pages except front page
     <?php wp_head();?>
 </head>
 <body <?php body_class();?>>
-<div class="container-fluid  ">
+<div class="container-fluid  body-container ">
 
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <header class="header-container  text-center" style="background-image:url(<?php header_image(); ?>);">
                     
                     <div class="header-content">

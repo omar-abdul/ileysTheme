@@ -28,7 +28,7 @@ if($cat !==0):
         <div class="container"> 
 
 
-            <div class="owl-carousel owl-theme">
+            <div class="brand-carousel owl-carousel owl-theme">
             <?php foreach ($posts as $post):?>
 
            

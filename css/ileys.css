@@ -74,6 +74,13 @@ body{
     background: #efefef;
 }
 
+.body-container{
+    padding:0;
+}
+.body-container .row{
+    margin-left:0;
+    margin-right:0;
+}
 
 a:hover {
     text-decoration: none;
@@ -724,16 +731,10 @@ header .site-nav:after {
     -webkit-backface-visibility: hidden;
 }
 
-.col-12{
-    padding-right:0px;
-    padding-left:0px;
-
-}
 
 .footer {
     background:#5995ff;
     color:#fefefe;
-
     border-top:2px solid #fff;
     height: auto;
     overflow: hidden;
@@ -1021,6 +1022,11 @@ a img.aligncenter {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    height:200px;
+}
+.partner .bg-image {
+    background-size:contain;
+    height:75px;
 }
 .ileys-gallery-format .standard-featured {
     height:300px;
