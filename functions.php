@@ -34,6 +34,17 @@ function custom_theme_setup(){
     ) );
 
     add_post_type_support( 'page', 'excerpt' );
+
+
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
     
     
 }
@@ -150,6 +161,29 @@ if(!function_exists('get_thumbnail_default')):
         return $output;
     }
 endif;
+
+
+function register_footer_widget(){
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer Sidebar 2',
+        'id' => 'footer-sidebar-2',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init','register_footer_widget');
 
 require get_template_directory(). '/inc/walker.php';
 require get_template_directory(). '/inc/customizer.php';
