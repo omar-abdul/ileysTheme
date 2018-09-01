@@ -12,7 +12,7 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="container ileys-post-container">
-
+            
 			<div class="search-container">
 			<?php get_search_form(); ?>
 
@@ -20,8 +20,9 @@
 
 
 			<?php
-			if ( have_posts() ) :
-
+            if ( have_posts() ) :
+                ?><h2>Search results for :" <?php echo esc_html( get_search_query( false ) ); ?> "</h2>
+                <?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 

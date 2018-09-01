@@ -124,13 +124,22 @@ function single_ileys_post_data(){
 
  if(!function_exists('exclude_category')):
      function exclude_category($query){
-        if($query->is_home() && $query->is_main_query() ):
-            $cat =intval('-'.get_theme_mod('ileys_category_setting',0)); 
-            if(!$cat){
-                $cat = 0;
-            }
+        if ( (!is_admin())  && $query->is_search() ):
+         $cat = explode(",",esc_attr(get_theme_mod('ileys_exclude_posts')));
+        
+         $exclude= array();
 
-            $query->set('cat',  $cat);
+         foreach($cat as $c):
+            
+            $exclude [] = get_cat_ID(esc_attr($c));
+         endforeach;
+
+
+            $query->set('post_type',  array('post','page','brands','trading'));
+            
+            if(!empty($exclude)):
+                $query->set('category__not_in', $exclude);
+            endif;
         endif;
      }
      add_action('pre_get_posts','exclude_category');
@@ -184,6 +193,101 @@ function register_footer_widget(){
     ));
 }
 add_action('widgets_init','register_footer_widget');
+
+// Register custom post types
+function custom_post_type(){
+    $brand_labels = array(
+        'name'                => _x( 'Brands', 'Post Type General Name', 'ileystheme' ),
+        'singular_name'       => _x( 'Brand', 'Post Type Singular Name', 'ileystheme' ),
+        'menu_name'           => __( 'Brands', 'ileystheme' ),
+        'parent_item_colon'   => __( 'Parent Brand', 'ileystheme' ),
+        'all_items'           => __( 'All Brand', 'ileystheme' ),
+        'view_item'           => __( 'View Brand', 'ileystheme' ),
+        'add_new_item'        => __( 'Add New Brand', 'ileystheme' ),
+        'add_new'             => __( 'Add New', 'ileystheme' ),
+        'edit_item'           => __( 'Edit Brand', 'ileystheme' ),
+        'update_item'         => __( 'Update Brand', 'ileystheme' ),
+        'search_items'        => __( 'Search Brand', 'ileystheme' ),
+        'not_found'           => __( 'Not Found', 'ileystheme' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'ileystheme' ),
+    );
+         
+    $args_brand = array(
+        'label'               => __( 'brands', 'ileystheme' ),
+        'description'         => __( 'Brand description', 'ileystheme' ),
+        'labels'              => $brand_labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields','post-formats' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'category' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );
+
+
+
+    $trading_labels = array(
+        'name'                => _x( 'Tradings', 'Post Type General Name', 'ileystheme' ),
+        'singular_name'       => _x( 'Trading', 'Post Type Singular Name', 'ileystheme' ),
+        'menu_name'           => __( 'Tradings', 'ileystheme' ),
+        'parent_item_colon'   => __( 'Parent Trading Item', 'ileystheme' ),
+        'all_items'           => __( 'All Trading Items', 'ileystheme' ),
+        'view_item'           => __( 'View Trading Item', 'ileystheme' ),
+        'add_new_item'        => __( 'Add New Trading Item', 'ileystheme' ),
+        'add_new'             => __( 'Add New', 'ileystheme' ),
+        'edit_item'           => __( 'Edit Trading Item', 'ileystheme' ),
+        'update_item'         => __( 'Update Trading Item', 'ileystheme' ),
+        'search_items'        => __( 'Search Trading Item', 'ileystheme' ),
+        'not_found'           => __( 'Not Found', 'ileystheme' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'ileystheme' ),
+    );
+         
+    $args_trading = array(
+        'label'               => __( 'tradings', 'ileystheme' ),
+        'description'         => __( 'Trading item description', 'ileystheme' ),
+        'labels'              => $trading_labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'post-formats'),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+        'taxonomies'          => array( 'category' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */ 
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 4,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+    );
+
+    register_post_type( 'brands', $args_brand );
+    register_post_type( 'trading',$args_trading);
+}
+add_action( 'init', 'custom_post_type', 0 );
+
+
 
 require get_template_directory(). '/inc/walker.php';
 require get_template_directory(). '/inc/customizer.php';

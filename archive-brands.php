@@ -3,7 +3,7 @@
 /*
 ######
 
-Custom Category page to display The Brand Category
+Template Name:Archives Brand
 #####
 */
 ?>
@@ -21,6 +21,10 @@ Custom Category page to display The Brand Category
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="container-fluid ileys-post-container">
+			<div class="search-container">
+			<?php get_search_form(); ?>
+
+			</div>
 
 				<div class="row align-items-center justify-content-start">
 					<div class="col-12 col-md-8   offset-md-2   my-3 cat-content">
@@ -36,11 +40,15 @@ Custom Category page to display The Brand Category
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'categories/category','brand' );
+					get_template_part( 'template-parts/content' );
 
 				endwhile;
 
-			endif;
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+	
+				endif;
 			?>
 			</div>
 			

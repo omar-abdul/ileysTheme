@@ -1,3 +1,15 @@
+<?php
+/*
+######
+
+Template Name:Archives Trading
+#####
+*/
+
+?>
+
+
+
 <?php 
 	if (!is_home() && is_front_page()){
 		get_header();
@@ -13,7 +25,10 @@
 		<main id="main" class="site-main" role="main">
 			<div class="container ileys-post-container">
 
+			<div class="search-container">
+			<?php get_search_form(); ?>
 
+			</div>
 			<?php
 			if ( have_posts() ) :
 

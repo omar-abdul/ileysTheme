@@ -610,7 +610,7 @@ header .site-nav:after {
       position: relative;
       opacity: 0;
   }
-  #about .section-image, .trading .peek-content{
+  #about .section-image, #trading .peek-content{
     left: -600px;
   }
   #trading .section-image,  #about .peek-content{
@@ -645,7 +645,7 @@ header .site-nav:after {
     transform: skewY(2deg);
     -webkit-backface-visibility: hidden;
   }
-.trading {
+#trading {
 
     background: #fafafa;
     
@@ -665,7 +665,7 @@ header .site-nav:after {
      color:#fefefe;
 }
 
-.trading:before {
+#trading:before {
     content: '';
     position: absolute;
     left: 0;
@@ -784,6 +784,8 @@ header .site-nav:after {
     color:#0077B5;
 
 }
+
+
 
 .bg-social{
     position: relative;

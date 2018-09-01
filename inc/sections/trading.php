@@ -11,7 +11,7 @@ $posts = get_posts($args);
 if($cat !==0):
 
 ?>
-<section class="trading">
+<section id= "trading" class="trading">
 
 <div class="container"> 
         <div class="title text-center">

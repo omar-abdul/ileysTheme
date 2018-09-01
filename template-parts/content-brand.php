@@ -1,12 +1,12 @@
 <?php
-
 /*
 
-Generic template Standard Post Format
+Brand item template
+*/
+?>
+    
 
-*/?>
-
-<article id ="post-<?php the_ID(); ?>" <?php post_class("brand pb-5 m-3");?>>
+<article id ="post-<?php the_ID(); ?>" <?php post_class("brand m-3 ");?>>
 
 <div class="container-fluid">
     <div class="card-box">

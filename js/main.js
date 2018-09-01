@@ -37,7 +37,7 @@
     var windowBottom = $(window).scrollTop()+$(window).height();
     var aboutSection = getSectionHeight('.about');
     var productSection = getSectionHeight('.products');
-    var tradingSection = getSectionHeight('.trading');
+    var tradingSection = getSectionHeight('#trading');
     // var partnerSection = getSectionHeight('.partner');
 
         if(aboutSection && windowBottom >= aboutSection){
@@ -71,17 +71,17 @@
 
         }
         if(tradingSection && windowBottom >= tradingSection){
-            $('.trading').animate({
+            $('#trading').animate({
                 opacity:'1'
             },800,function(){
-                $('.trading .section-image').animate({
+                $('#trading .section-image').animate({
                 
                     opacity:'1',
                     right:'0'
                    
     
                 },800)
-                $('.trading .peek-content').animate({
+                $('#trading .peek-content').animate({
                     
                     opacity:'1',
                     left:'0'

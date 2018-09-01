@@ -193,7 +193,7 @@ function ileys_customize_register($wp_customize){
         )
      ) );
 
-     $wp_customize->add_section('ileys_logo_section',
+     $wp_customize->add_section('ileys_site_section',
         
      array(
          'title'=>__('Site settings '),
@@ -216,7 +216,7 @@ function ileys_customize_register($wp_customize){
      array(
         'label' => __( 'Select logo image ' ),
         'description' => esc_html__( 'Choose mage to set as logo' ),
-        'section' => 'ileys_logo_section',
+        'section' => 'ileys_site_section',
 
         'button_labels' => array( // Optional.
            'select' => __( 'Select Image' ),
@@ -229,6 +229,28 @@ function ileys_customize_register($wp_customize){
         )
      )
   ) );
+
+
+  $wp_customize->add_setting( 'ileys_exclude_posts',
+  array(
+      'default' => '',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'esc_attr',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options'
+  )
+  );
+  
+  $wp_customize->add_control( 'ileys_exclude_posts',
+  array(
+     'label' => __( 'Select Categories to exclude from main post list ' ),
+     'description' => _e( 'Input categories separated by commas ' ),
+     'section' => 'ileys_site_section',
+     'type'=>'text',
+     'input_attrs'=>array(
+         'placeholder'=>"eg. brands,trading,etc"
+     )
+) );
 
      $wp_customize->add_setting( 'promotion_section_text',
      array(
