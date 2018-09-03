@@ -175,5 +175,18 @@
         }
         $('#front-header').addClass('bg-nav');
     }
+    var arr = $('.yt-thumbnail').toArray();
+    if(arr){
+        for(var i = 0; i < arr.length; i++){
+            var url = $(arr[i]).data('url');
+            var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+            if (youtube_video_id.length == 11) {
+                var video_thumbnail = 'http://img.youtube.com/vi/'+youtube_video_id+'/0.jpg';
+                $(arr[i]).attr('src',video_thumbnail);
+               
+            }
+
+        }
+    }
 
 })(jQuery)

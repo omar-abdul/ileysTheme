@@ -244,8 +244,9 @@ function ileys_customize_register($wp_customize){
   $wp_customize->add_control( 'ileys_exclude_posts',
   array(
      'label' => __( 'Select Categories to exclude from main post list ' ),
-     'description' => _e( 'Input categories separated by commas ' ),
+     'description' => _e( 'Input categories separated by commas ' ,'ileystheme'),
      'section' => 'ileys_site_section',
+     'capability' => 'edit_theme_options',
      'type'=>'text',
      'input_attrs'=>array(
          'placeholder'=>"eg. brands,trading,etc"

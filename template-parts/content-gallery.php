@@ -8,7 +8,7 @@ Generic template Gallery Post Format
 
 <article id ="post-<?php the_ID(); ?>" <?php post_class('ileys-gallery-format');?>>
 <div class="container">
-<div class="card ">
+<div class="card " itemscope itemtype="https://schema.org/Thing">
         <header>
                 <?php  if(get_thumbnail_default()):
                     $attachments = get_thumbnail_default(5);
@@ -21,7 +21,7 @@ Generic template Gallery Post Format
                             foreach($attachments as $attachment):
                                  $active = ($i==0 ?'active':'');
                             ?>
-                                <div class='carousel-item <?php echo $active;?> bg-image standard-featured' style='background-image:url(<?php echo wp_get_attachment_url($attachment->ID);?>)'>
+                                <div itemprop="image" class='carousel-item <?php echo $active;?> bg-image standard-featured' style='background-image:url(<?php echo wp_get_attachment_url($attachment->ID);?>)'>
 
                                 </div>
                             <?php $i++; endforeach; ?>
@@ -32,9 +32,9 @@ Generic template Gallery Post Format
          </header>
   <div class="card-body">
     
-       <?php the_title('<h3 class="card-title text-center">','</h3>');?>
+       <?php the_title('<h3 class="card-title text-center" itemprop="name">','</h3>');?>
    
-    <div class="card-text-wrapper ">
+    <div class="card-text-wrapper " itemprop="description">
     
         <?php 
             $content = get_the_content();

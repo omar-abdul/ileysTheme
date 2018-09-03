@@ -9,13 +9,13 @@ Generic template Standard Post Format
 <article id ="post-<?php the_ID(); ?>" <?php post_class("brand pb-5 m-3");?>>
 
 <div class="container-fluid">
-    <div class="card-box">
+    <div class="card-box" itemscope itemtype="http://schema.org/Brand">
     
-        <div class="photo bg-image-contain"  style="background-image:url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium-large')?>)">
+        <div itemprop='logo' class="photo bg-image-contain"  style="background-image:url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'medium-large')?>)">
         </div>
             <div class="description">
-                    <?php the_title('<h3 class="card-title">','</h3>');?>
-                    <p class="card-text"><?php the_excerpt();?></p>
+                    <?php the_title('<h3 class="card-title" itemprop="name">','</h3>');?>
+                    <p class="card-text" itemprop="description"><?php the_content();?></p>
 
 
                 </div>

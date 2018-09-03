@@ -62,6 +62,7 @@ function customTheme_script_enqueue(){
 
 
     wp_deregister_script('jquery');
+    wp_enqueue_script( 'mce-view' );
     
     wp_enqueue_script('jquery', get_template_directory_uri() ."/js/jquery.min.js",array() , "3.3.1",true);
     wp_enqueue_script('jqueryui',get_template_directory_uri() . "/js/jquery-ui.min.js",array('jquery') ,'1.12.1', true);
@@ -162,7 +163,7 @@ if(!function_exists('get_thumbnail_default')):
                 foreach($attachments as $attachment):
                     $output = wp_get_attachment_url($attachment->ID);
                 endforeach;
-            elseif($attachments && $num > 1):
+            elseif($attachments && ($num > 1 || $num < 1)):
                 $output = $attachments;
             endif;
 
@@ -286,6 +287,26 @@ function custom_post_type(){
     register_post_type( 'trading',$args_trading);
 }
 add_action( 'init', 'custom_post_type', 0 );
+
+
+function get_all_embeds($content){
+
+    
+    $embedded = get_media_embedded_in_content( $content );
+
+    $output = array();
+
+    foreach($embedded as $e):
+        if(preg_match( '/src="([^"]*)"/i', $e, $m )):
+            $output []= $m[1];
+
+        endif;
+
+    endforeach;
+    
+    return $output;
+
+}
 
 
 

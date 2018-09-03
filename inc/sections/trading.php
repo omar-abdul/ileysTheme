@@ -3,8 +3,9 @@ $cat = get_theme_mod('ileys_trading_dropdowncat',0);
 
 
 $args = array(
+    'post_type'=>'trading',
     'posts_per_page'=>5,
-    'category'=>get_theme_mod('ileys_trading_dropdowncat')
+    
 );
 $posts = get_posts($args);
 
